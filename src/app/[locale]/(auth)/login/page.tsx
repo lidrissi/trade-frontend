@@ -1,14 +1,16 @@
 'use client';
 
 import { signIn } from 'next-auth/react';
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
-export default function LoginPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+export default function LoginPage(): React.ReactElement {
+  const t = useTranslations('Auth');
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [error, setError] = useState<string>('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
     setError('');
 
@@ -30,16 +32,16 @@ export default function LoginPage() {
       <form onSubmit={handleSubmit} className="p-6 bg-white rounded shadow-md w-80 space-y-4">
         <h1 className="text-xl font-bold">Login</h1>
         <input
-          placeholder="Email"
+          placeholder={t('Email')}
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
           className="w-full p-2 border rounded"
         />
         <input
           type="password"
           placeholder="Password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
           className="w-full p-2 border rounded"
         />
         {error && <p className="text-red-500 text-sm">{error}</p>}
