@@ -1,107 +1,52 @@
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import facebookSvg from '@/images/socials/facebook-2.svg';
-import googleSvg from '@/images/socials/google.svg';
-import twitterSvg from '@/images/socials/twitter.svg';
-import { Field, FieldGroup, Fieldset, Label } from '@/shared/fieldset';
-import { Metadata } from 'next';
-import Form from 'next/form';
-import Image from 'next/image';
-import Link from 'next/link';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Login',
-  description: 'Login page for the application',
-};
+import { signIn } from 'next-auth/react';
+import { useState } from 'react';
 
-const loginSocials = [
-  {
-    name: 'Continue with Facebook',
-    href: '#',
-    icon: facebookSvg,
-  },
-  {
-    name: 'Continue with Twitter',
-    href: '#',
-    icon: twitterSvg,
-  },
-  {
-    name: 'Continue with Google',
-    href: '#',
-    icon: googleSvg,
-  },
-];
+export default function LoginPage() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-const PageLogin = () => {
-  const handleSubmit = async (formData: FormData) => {
-    'use server';
-    const formObject = Object.fromEntries(formData.entries());
-    console.log(formObject);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+
+    const res = await signIn('credentials', {
+      email: 'superadmin@massarates.ma',
+      password: 'Fdgx9!kQ',
+      redirect: false, // prevent automatic redirect
+    });
+
+    if (res?.error) {
+      setError('Invalid credentials');
+    } else {
+      window.location.href = '/'; // redirect manually
+    }
   };
 
   return (
-    <div>
-      <div className="container mb-24 lg:mb-32">
-        <h1 className="my-20 flex items-center justify-center text-3xl leading-[115%] font-semibold text-neutral-900 md:text-5xl md:leading-[115%] dark:text-neutral-100">
-          Login
-        </h1>
-        <div className="mx-auto flex max-w-md flex-col gap-y-6">
-          <div className="grid gap-3">
-            {loginSocials.map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                className="flex w-full rounded-lg bg-primary-50 px-4 py-3 transition-transform hover:-translate-y-0.5 sm:px-6 dark:bg-neutral-800"
-              >
-                <Image className="size-5 shrink-0 object-cover" src={item.icon} alt={item.name} sizes="40px" />
-                <h3 className="grow text-center text-sm font-medium text-neutral-700 sm:text-sm dark:text-neutral-300">
-                  {item.name}
-                </h3>
-              </a>
-            ))}
-          </div>
-          {/* OR */}
-          <div className="relative text-center">
-            <span className="relative z-10 inline-block bg-white px-4 text-sm font-medium dark:bg-neutral-900 dark:text-neutral-400">
-              OR
-            </span>
-            <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 transform border border-neutral-100 dark:border-neutral-800"></div>
-          </div>
-          {/* FORM */}
-          <Form action={handleSubmit}>
-            <Fieldset>
-              <FieldGroup className="sm:space-y-6">
-                <Field>
-                  <Label>Email</Label>
-                  <Input type="email" name="email" placeholder="example@example.com" />
-                </Field>
-                <Field>
-                  <Label className="flex items-center justify-between gap-2">
-                    <span>Password</span>
-                    <Link className="text-sm font-normal text-primary-600" href="/forgot-password">
-                      Forgot password?
-                    </Link>
-                  </Label>
-                  <Input type="password" name="password" />
-                </Field>
-                <Button className="mt-2 w-full" type="submit">
-                  Continue
-                </Button>
-              </FieldGroup>
-            </Fieldset>
-          </Form>
-
-          {/* ==== */}
-          <span className="block text-center text-sm text-neutral-700 dark:text-neutral-300">
-            New user? {` `}
-            <Link className="text-primary-600 underline" href="/signup">
-              Create an account
-            </Link>
-          </span>
-        </div>
-      </div>
+    <div className="flex items-center justify-center min-h-screen">
+      <form onSubmit={handleSubmit} className="p-6 bg-white rounded shadow-md w-80 space-y-4">
+        <h1 className="text-xl font-bold">Login</h1>
+        <input
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full p-2 border rounded"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="w-full p-2 border rounded"
+        />
+        {error && <p className="text-red-500 text-sm">{error}</p>}
+        <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">
+          Sign In
+        </button>
+      </form>
     </div>
   );
-};
-
-export default PageLogin;
+}
