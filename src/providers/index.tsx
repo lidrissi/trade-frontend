@@ -8,9 +8,7 @@ export function AppProviders({ children, locale }: { children: React.ReactNode; 
     <SessionProvider>
       <ReduxProvider>
         <I18nProvider locale={locale}>
-          {/* <AbilityProvider> */}
-          {children}
-          {/* </AbilityProvider> */}
+          <AbilityProvider>{children}</AbilityProvider>
         </I18nProvider>
       </ReduxProvider>
     </SessionProvider>

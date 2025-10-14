@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useMemo } from 'react';
+import { createContext, useContext } from 'react';
 import { AppAbility, defineAbilityFor } from '@/lib/ability';
 import { useSession } from 'next-auth/react';
 
