@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { NextIntlClientProvider } from 'next-intl';
-import { ReduxProvider } from '@/store/provider';
-import { notFound } from 'next/navigation';
+import { AppProviders } from '@/providers';
+import { use } from 'react';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -20,26 +19,18 @@ export const metadata: Metadata = {
   description: 'B2B E-commerce platform',
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
-  params: { locale },
+  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }>) {
-  let messages;
-  try {
-    messages = (await import(`../../messages/${locale}.json`)).default;
-  } catch (error) {
-    notFound();
-  }
-
+  const { locale } = use(params);
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ReduxProvider>
-          <NextIntlClientProvider>{children}</NextIntlClientProvider>
-        </ReduxProvider>
+        <AppProviders locale={locale}>{children}</AppProviders>
       </body>
     </html>
   );

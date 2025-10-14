@@ -25,6 +25,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
               password: credentials.password,
             }),
           });
+          console.log('===process.env.EXTERNAL_API_BASE_URL', res.ok);
 
           if (!res.ok) {
             return null;
