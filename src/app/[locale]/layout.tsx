@@ -1,17 +1,29 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { AppProviders } from '@/providers';
 import { use } from 'react';
+import { Inter, Outfit, Work_Sans } from 'next/font/google';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const inter = Inter({
   subsets: ['latin'],
+  variable: '--font-inter',
+  fallback: ['sans-serif'],
+
+  display: 'swap',
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const outfit = Outfit({
   subsets: ['latin'],
+  variable: '--font-outfit',
+  fallback: ['sans-serif'],
+  display: 'swap',
+});
+
+const workSans = Work_Sans({
+  subsets: ['latin'],
+  variable: '--font-work-sans',
+  fallback: ['sans-serif'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -29,7 +41,7 @@ export default function RootLayout({
   const { locale } = use(params);
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${inter.variable} ${outfit.variable} ${workSans.variable}`}>
         <AppProviders locale={locale}>{children}</AppProviders>
       </body>
     </html>

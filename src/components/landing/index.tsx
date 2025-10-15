@@ -10,7 +10,7 @@ import Stats from './sections/Stats';
 import Stories from './sections/Stories';
 import Why from './sections/Why';
 
-export default function Landing() {
+export default function Landing(): React.ReactElement {
   return (
     <>
       <Banner />

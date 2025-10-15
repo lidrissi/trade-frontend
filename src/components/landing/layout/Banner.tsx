@@ -2,13 +2,10 @@ import { X } from 'lucide-react';
 
 export default function Banner() {
   return (
-    <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-black px-6 py-2.5 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10 sm:px-3.5 sm:before:flex-1">
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-        <p className="text-sm/6 text-gray-100">Sign up and get 20% off to your first order.</p>
-        <a
-          href="#"
-          className="flex-none px-3.5 py-1 text-sm font-semibold text-white shadow-xs inset-ring-white/20 hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-        >
+    <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-[#1D1715] px-6 py-2.5 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10 sm:px-3.5 sm:before:flex-1">
+      <div className="font-satoshi flex flex-wrap items-center gap-x-4 gap-y-2">
+        <p className=" text-sm/6 text-gray-100 leading-none">Sign up and get 20% off to your first order.</p>
+        <a href="#" className="text-sm font-medium capitalize underline text-white">
           Sign up now
         </a>
       </div>
