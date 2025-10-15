@@ -14,8 +14,8 @@ export default function Hero() {
               <div className="flex items-center gap-3 bg-[#ffffff] rounded-full p-1.5 shadow-sm">
                 <input
                   type="text"
-                  placeholder="Qu'est-ce que tu cherches"
-                  className="flex-1 border-0 bg-transparent px-6 text-base focus-visible:ring-0 focus-visible:ring-offset-0"
+                  placeholder="What are you looking for ?"
+                  className="flex-1 border-0 bg-transparent px-6 text-base focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-0"
                 />
                 <button className="p-2 hover:opacity-70 transition-opacity">
                   <ImagePlusIcon className="w-6 h-6 text-black" />
