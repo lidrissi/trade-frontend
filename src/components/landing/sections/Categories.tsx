@@ -15,6 +15,7 @@ import {
   Lightbulb,
   SprayCan as Spray,
   Sprout,
+  MoveRight,
 } from 'lucide-react';
 
 export default function Categories() {
@@ -40,61 +41,55 @@ export default function Categories() {
   ];
 
   return (
-    <div className="mx-auto bg-white">
-      <div className="grid lg:grid-cols-[1fr_auto] gap-8 p-8 lg:p-12">
-        {/* Hero Section */}
-        <div className="bg-[#1e1e1e] rounded-3xl p-12 lg:p-16 flex items-center">
-          <h1 className="text-[#ffffff] text-4xl font-bold leading-tight">
+    <div className="container px-6 mx-auto bg-white">
+      <div className="grid lg:grid-cols-[1fr_auto] gap-8 py-8 lg:py-8">
+        <div className="bg-[#0F0E0E] rounded-3xl p-10 lg:p-10 flex items-center">
+          <h1 className="text-white text-3xl font-bold font-outfit">
             Browse a diverse catalogue, designed for international businesses
           </h1>
         </div>
 
         {/* Navigation Section */}
-        <div className="flex flex-col justify-between min-w-[400px]">
-          <div>
-            <h2 className="text-[#000000] text-3xl font-bold mb-8">Explorez le catalogue</h2>
-            <div className="flex items-center gap-4 mb-8">
-              <a href="#" className="text-[#000000] text-lg font-medium underline underline-offset-4 decoration-2">
+        <div className="flex flex-row justify-between min-w-[400px] bg-[#F7F7F7] rounded-3xl p-10">
+          <div className="flex flex-col justify-between">
+            <h2 className="text-black text-xl font-semibold mb-8 font-outfit">Explorez le catalogue</h2>
+            <div className="flex items-center gap-4 mb-2">
+              <a
+                href="#"
+                className="text-[#393737] text-lg font-medium underline underline-offset-4 decoration-2 font-inter"
+              >
                 All categories
               </a>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
+              <MoveRight className="w-6 h-6" />
             </div>
           </div>
-
-          <div className="flex gap-3 justify-end">
-            <button className="w-14 h-14 rounded-full border-2 border-[#000000] flex items-center justify-center hover:bg-[#f7f7f7] transition-colors">
+          <div className="flex gap-1 items-end">
+            <button className="w-12 h-12 rounded-full border-1 border-[#1E1E1E] flex items-center justify-center hover:bg-[#f7f7f7] transition-colors">
               <ChevronLeft className="w-6 h-6" />
             </button>
-            <button className="w-14 h-14 rounded-full border-2 border-[#000000] flex items-center justify-center hover:bg-[#f7f7f7] transition-colors">
+            <button className="w-12 h-12 rounded-full border-1 border-[#1E1E1E] flex items-center justify-center hover:bg-[#f7f7f7] transition-colors">
               <ChevronRight className="w-6 h-6" />
             </button>
           </div>
         </div>
       </div>
 
+      {/* <div className="inverted-radius-pseudo bg-gradient-to-r from-cyan-500 to-blue-500 h-64 flex items-center justify-center relative">
+        <span className="text-white font-bold text-xl">Inverted Radius</span>
+      </div> */}
+
       {/* Categories Grid */}
-      <div className="px-8 lg:px-12 pb-12">
+      <div className="pb-12">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-9 gap-4">
           {categories.map((category, index) => {
             const Icon = category.icon;
             return (
               <div
                 key={index}
-                className="bg-[#f7f7f7] rounded-2xl p-6 flex flex-col items-center justify-center gap-4 hover:bg-[#ececec] transition-colors cursor-pointer"
+                className="bg-[#F7F7F7] rounded-2xl p-4 gap-2 flex flex-col items-center justify-center hover:bg-[#ececec] transition-colors cursor-pointer"
               >
                 <Icon size={46} className="stroke-[1.5]" />
-                <p className="text-[#000000] text-xs text-center font-medium">{category.label}</p>
+                <p className="text-black text-xs text-center font-medium font-inter">{category.label}</p>
               </div>
             );
           })}
