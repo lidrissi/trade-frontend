@@ -2,7 +2,7 @@ import Banner from './layout/Banner';
 import LandingFooter from './layout/Footer';
 import LandingHeader from './layout/Header';
 import Categories from './sections/Categories';
-import DailyBestSellsNav from './sections/DailyBestSellsNav';
+import DailyBestSells from './sections/DailyBestSells';
 import Hero from './sections/Hero';
 import HowItWorks from './sections/HowItWorks';
 import Sponsors from './sections/Sponsors';
@@ -19,7 +19,7 @@ export default function Landing(): React.ReactElement {
         <Hero />
         <Categories />
         <Why />
-        <DailyBestSellsNav />
+        <DailyBestSells />
         <Stats />
         <Stories />
         <HowItWorks />
