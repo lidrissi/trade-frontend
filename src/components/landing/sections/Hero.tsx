@@ -1,50 +1,48 @@
-import { Globe, ShoppingCart, User, Search, ArrowUpRight, ImageIcon } from 'lucide-react';
-import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Search, ArrowUpRight, ImagePlusIcon } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <div className="bg-[#ffffff]">
+    <div className="bg-white">
       <div className="bg-[#e8e8e8] py-24">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl">
-            {/* Main Heading */}
-            <h1 className="text-6xl font-bold text-[#000000] mb-12 leading-tight">
+            <h1 className="text-6xl leading-6xl font-bold text-black mb-12 font-outfit">
               The Moroccan B2B solution to boost your exports
             </h1>
-
-            {/* Search Bar */}
-            <div className="mb-12">
-              <div className="flex items-center gap-3 bg-[#ffffff] rounded-full p-2 shadow-sm">
+            <div className="hidden sm:block mb-12">
+              <div className="flex items-center gap-3 bg-[#ffffff] rounded-full p-1.5 shadow-sm">
                 <input
                   type="text"
                   placeholder="Qu'est-ce que tu cherches"
                   className="flex-1 border-0 bg-transparent px-6 text-base focus-visible:ring-0 focus-visible:ring-offset-0"
                 />
                 <button className="p-2 hover:opacity-70 transition-opacity">
-                  <ImageIcon className="w-5 h-5 text-[#000000]" />
+                  <ImagePlusIcon className="w-6 h-6 text-black" />
                 </button>
-                <button className="bg-[#1a0f0c] text-[#ffffff] hover:bg-[#151515] rounded-full px-8 py-3 flex items-center gap-2">
+                <Button size={'lg'} className="rounded-full bg-[#151515] w-40">
                   <Search className="w-4 h-4" />
                   Search
-                </button>
+                </Button>
               </div>
             </div>
-
-            {/* CTA buttons */}
             <div className="flex items-center gap-4">
-              <button className="bg-[#1a0f0c] text-[#ffffff] hover:bg-[#151515] rounded-full px-6 py-3 text-base flex items-center gap-3">
-                Explore Products
-                <div className="bg-[#ffffff] rounded-full p-1.5">
-                  <ArrowUpRight className="w-4 h-4 text-[#1a0f0c]" />
-                </div>
-              </button>
-
-              <button className="bg-[#ffffff] text-[#000000] border-[#000000] hover:bg-[#f5f5f5] rounded-full px-6 py-3 text-base flex items-center gap-3">
-                Join as Supplier
-                <div className="bg-[#1a0f0c] rounded-full p-1.5">
-                  <ArrowUpRight className="w-4 h-4 text-[#ffffff]" />
-                </div>
-              </button>
+              <div className="flex">
+                <Button size={'lg'} className="rounded-full bg-[#151515]">
+                  Explore Products
+                </Button>
+                <Button size="icon-lg" className="rounded-full bg-[#151515]">
+                  <ArrowUpRight />
+                </Button>
+              </div>
+              <div className="flex">
+                <Button variant="outline" size={'lg'} className="rounded-full ">
+                  Join as Supplier
+                </Button>
+                <Button variant="outline" size="icon-lg" className="rounded-full">
+                  <ArrowUpRight />
+                </Button>
+              </div>
             </div>
           </div>
         </div>

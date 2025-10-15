@@ -40,7 +40,7 @@ export default function Categories() {
   ];
 
   return (
-    <div className="bg-[#ffffff]">
+    <div className="mx-auto bg-white">
       <div className="grid lg:grid-cols-[1fr_auto] gap-8 p-8 lg:p-12">
         {/* Hero Section */}
         <div className="bg-[#1e1e1e] rounded-3xl p-12 lg:p-16 flex items-center">

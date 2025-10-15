@@ -4,9 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-inter: var(--font-inter), sans-serif;
-  --font-outfit: var(--font-outfit), sans-serif;
-  --font-work-sans: var(--font-work-sans), sans-serif;
+  --font-inter: var(--font-inter);
+  --font-outfit: var(--font-outfit);
+  --font-work-sans: var(--font-work-sans);
   --font-satoshi: 'Satoshi', sans-serif;
   --font-sans: var(--font-inter);
   --color-background: var(--background);

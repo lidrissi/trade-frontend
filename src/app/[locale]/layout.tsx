@@ -8,8 +8,8 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   fallback: ['sans-serif'],
-
   display: 'swap',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
 const outfit = Outfit({
@@ -17,6 +17,7 @@ const outfit = Outfit({
   variable: '--font-outfit',
   fallback: ['sans-serif'],
   display: 'swap',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
 const workSans = Work_Sans({
@@ -24,6 +25,7 @@ const workSans = Work_Sans({
   variable: '--font-work-sans',
   fallback: ['sans-serif'],
   display: 'swap',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
 export const metadata: Metadata = {
