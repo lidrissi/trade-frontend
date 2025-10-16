@@ -21,8 +21,6 @@ export default function Why() {
           <div className="flex items-center justify-center rounded-3xl bg-[#dcdcdc] px-8 py-16 transition-all duration-500 delay-225 ease-out hover:scale-105 hover:shadow-xl skew-x-12">
             <ImageIcon className="h-12 w-12 text-[#3f3e3e] -skew-x-12" strokeWidth={1.5} />
           </div>
-
-          {/* Row 2 */}
           <div className="flex items-center justify-center rounded-3xl bg-[#dcdcdc] px-8 py-16 transition-all duration-500 delay-300 ease-out hover:scale-105 hover:shadow-xl skew-x-12">
             <ImageIcon className="h-12 w-12 text-[#3f3e3e]" strokeWidth={1.5} />
           </div>

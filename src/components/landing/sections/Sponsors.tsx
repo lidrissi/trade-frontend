@@ -1,13 +1,10 @@
 export default function Sponsors() {
   return (
-    <main className=" bg-white py-16 px-4">
+    <main className=" bg-white py-16 px-4 font-outfit">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-[#3a3a3a] text-5xl font-bold mb-4">Partners & Sponsors</h1>
-          <p className="text-[#3a3a3a] text-xl">
-            Simple steps to connect with Moroccan suppliers and grow your business
-          </p>
+        <div className="text-center mb-10">
+          <h1 className="text-[#3a3a3a] text-3xl font-bold mb-4">Partners & Sponsors</h1>
+          <p className="text-black text-base">Simple steps to connect with Moroccan suppliers and grow your business</p>
         </div>
 
         {/* Logo Grid */}
@@ -21,8 +18,6 @@ export default function Sponsors() {
             <div className="w-[160px] h-[80px] bg-[#d3d3d3] rounded-[32px]" />
             <div className="w-[140px] h-[80px] bg-[#dadada] rounded-[32px]" />
             <div className="w-[140px] h-[80px] bg-[#d3d3d3] rounded-[32px]" />
-            <div className="w-[160px] h-[80px] bg-[#d9d9d9] rounded-[32px]" />
-            <div className="w-[200px] h-[80px] bg-[#d9d9d9] rounded-[32px]" />
             <div className="w-[160px] h-[80px] bg-[#d3d3d3] rounded-[32px]" />
             <div className="w-[140px] h-[80px] bg-[#dadada] rounded-[32px]" />
             <div className="w-[340px] h-[80px] bg-[#dadada] rounded-[32px]" />
