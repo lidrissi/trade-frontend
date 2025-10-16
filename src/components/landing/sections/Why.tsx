@@ -2,7 +2,7 @@ import { ImageIcon } from 'lucide-react';
 
 export default function Why() {
   return (
-    <main className=" bg-white py-8">
+    <main className=" bg-white py-12">
       <div className="text-center mb-12">
         <h1 className="text-3xl font-bold mb-2 text-[#161616] font-outfit">Why choose Trade.ma ?</h1>
         <p className="text-sm text-black font-inter font-normal">We connect buyers with authentic Moroccan suppliers</p>

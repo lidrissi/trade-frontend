@@ -1,6 +1,6 @@
 export default function Sponsors() {
   return (
-    <main className=" bg-white py-16 px-4 font-outfit">
+    <main className=" bg-white px-4 font-outfit">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10">
           <h1 className="text-[#3a3a3a] text-3xl font-bold mb-4">Partners & Sponsors</h1>

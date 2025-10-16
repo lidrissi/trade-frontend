@@ -29,7 +29,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <div className="bg-black p-8 mx-auto mb-5 font-outfit">
+    <div className="bg-black p-8 mx-auto my-15 font-outfit">
       {/* Header Section */}
       <div className="text-center mb-12">
         <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">How Trade.ma works ?</h1>

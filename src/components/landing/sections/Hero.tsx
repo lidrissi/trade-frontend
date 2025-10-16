@@ -3,8 +3,8 @@ import { Search, ArrowUpRight, ImagePlusIcon } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <div className="bg-white">
-      <div className="bg-[#e8e8e8] py-24">
+    <div className="bg-white mb-20">
+      <div className="bg-[#e8e8e8] py-30">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl">
             <h1 className="text-6xl leading-6xl font-bold text-black mb-12 font-outfit">

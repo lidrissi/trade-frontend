@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 export default function LandingFooter() {
   return (
     <div className="flex flex-col font-inter">
-      <section className="mx-16 bg-[#505050] px-20 py-8 md:py-10 rounded-2xl">
+      <section className="mx-16 bg-[#505050] px-20 py-8 md:py-10 rounded-2xl translate-y-1/2">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex-1">
             <h1 className="text-white text-3xl md:text-4xl font-medium mb-4 font-outfit">
@@ -36,7 +36,7 @@ export default function LandingFooter() {
       </section>
       {/* Footer Section */}
       <footer className="bg-[#ececec] px-6 py-12 mt-auto font-satoshi">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto mt-20">
           {/* Main Footer Content */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
             {/* Brand Column */}

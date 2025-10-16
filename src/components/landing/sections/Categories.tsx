@@ -77,23 +77,19 @@ export default function Categories() {
       {/* <div className="inverted-radius-pseudo bg-gradient-to-r from-cyan-500 to-blue-500 h-64 flex items-center justify-center relative">
         <span className="text-white font-bold text-xl">Inverted Radius</span>
       </div> */}
-
-      {/* Categories Grid */}
-      <div className="pb-12">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-9 gap-4">
-          {categories.map((category, index) => {
-            const Icon = category.icon;
-            return (
-              <div
-                key={index}
-                className="bg-[#F7F7F7] rounded-2xl p-4 gap-2 flex flex-col items-center justify-center hover:bg-[#ececec] transition-colors cursor-pointer"
-              >
-                <Icon size={46} className="stroke-[1.5]" />
-                <p className="text-black text-xs text-center font-medium font-inter">{category.label}</p>
-              </div>
-            );
-          })}
-        </div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-9 gap-4">
+        {categories.map((category, index) => {
+          const Icon = category.icon;
+          return (
+            <div
+              key={index}
+              className="bg-[#F7F7F7] rounded-2xl p-4 gap-2 flex flex-col items-center justify-center hover:bg-[#ececec] transition-colors cursor-pointer"
+            >
+              <Icon size={46} className="stroke-[1.5]" />
+              <p className="text-black text-xs text-center font-medium font-inter">{category.label}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
