@@ -21,7 +21,7 @@ export default function Stats() {
   ];
 
   return (
-    <div className="w-full max-w-7xl bg-[#292929] rounded-3xl px-12 py-16 mx-auto">
+    <div className="container bg-[#292929] rounded-3xl px-6 py-16 mx-auto">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
         {stats.map((stat, index) => (
           <div key={index} className="flex items-start gap-6">

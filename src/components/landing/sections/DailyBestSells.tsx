@@ -1,5 +1,6 @@
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowUpRight, Bookmark, Star } from 'lucide-react';
+import { ArrowUpRight, Bookmark, Image, Star } from 'lucide-react';
 
 export default function DailyBestSells() {
   const navItems = ['All', 'Deals Of the Day', 'Beauty', 'Cosmetics', 'Textile', 'Agriculture'];
@@ -20,12 +21,12 @@ export default function DailyBestSells() {
           </div>
         </div>
       </nav>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <aside className="flex flex-col justify-between text-white bg-[#242424] rounded-2xl">
-          <div className="p-12">
-            <h1 className="text-3xl font-bold mb-8">Browse a diverse catalog, designed for international businesses</h1>
+          <div className="py-8 px-10">
+            <h1 className="text-3xl font-bold">Browse a diverse catalog, designed for international businesses</h1>
           </div>
-          <div className="mt-4 flex-shrink-1 bg-[#f7f7f7] text-[#000000] p-8 rounded-2xl">
+          <div className="mt-2 flex-shrink-1 bg-[#f7f7f7] text-[#000000] p-8 rounded-2xl">
             <h2 className="text-lg font-bold mb-6">Explorez le catalogue</h2>
             <nav className="space-y-2">
               <a href="#" className="block text-base font-medium underline hover:no-underline">
@@ -41,31 +42,33 @@ export default function DailyBestSells() {
           </div>
         </aside>
         <div className="bg-[#dcdcdc] rounded-3xl overflow-hidden flex flex-col">
-          <div className="h-40 bg-[#dcdcdc] flex items-center justify-center">
-            <div className="w-16 h-16 text-[#9a9998]">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                <circle cx="8.5" cy="8.5" r="1.5" />
-                <polyline points="21 15 16 10 5 21" />
-              </svg>
+          <div className="h-40 bg-[#dcdcdc] flex items-center justify-center relative">
+            <div className="flex flex-col absolute top-4 right-4 gap-2">
+              <Badge variant={'default'} className="rounded-full font-outfit text-xs">
+                Verified
+              </Badge>
+              <Badge variant={'secondary'} className="rounded-full font-outfit">
+                In stock
+              </Badge>
             </div>
+            <Image className="w-16 h-16 text-[#9a9998]" />
           </div>
-          <div className="p-8 flex-1 flex flex-col">
+          <div className="p-8 pt-0 flex-1 flex flex-col">
             <h3 className="text-lg font-semibold mb-3 text-[#363431]">Traditional B2B Collection</h3>
             <p className="text-[#6d6a6a] text-xs mb-4 leading-relaxed font-inter font-normal">
               Discover our exclusive collection of traditional Moroccan products specially selected for professionals
               (B2B).
             </p>
+            <div className="text-base font-bold mb-2 text-[#000000]">
+              455 DH- 699 DH <span className="text-sm font-normal text-[#6d6a6a]">/ unit</span>
+            </div>
+            <div className="text-xs text-[#363431] mb-3 font-normal">Fez, Morocco</div>
+            <div className="flex items-center gap-1 mb-4 text-sm">
+              <Star className="w-3 h-3 fill-[#3E3E3E] text-[#000000]" />
+              <span className="font-semibold text-[#292826]">4,7</span>
+              <span className="text-xs text-[#6d6a6a] font-normal">Moroccan Craft House</span>
+            </div>
             <div className="mt-auto">
-              <div className="text-base font-bold mb-2 text-[#000000]">
-                455 DH- 699 DH <span className="text-sm font-normal text-[#6d6a6a]">/ unit</span>
-              </div>
-              <div className="text-sm text-[#363431] mb-3">Fez, Morocco</div>
-              <div className="flex items-center gap-1 mb-4 text-sm">
-                <Star className="w-4 h-4 fill-[#000000] text-[#000000]" />
-                <span className="font-bold text-[#000000]">4,7</span>
-                <span className="text-[#6d6a6a]">Moroccan Craft House</span>
-              </div>
               <div className="flex gap-1">
                 <Button className="bg-[#363431] hover:bg-[#464847] text-white text-xs rounded-full font-medium">
                   Request Quote
@@ -82,73 +85,60 @@ export default function DailyBestSells() {
             </div>
           </div>
         </div>
-        <div className="grid grid-rows-2 gap-6">
-          <div className="bg-[#dcdcdc] rounded-3xl overflow-hidden flex flex-col relative">
+        <div className="grid gap-6">
+          <div
+            className="bg-[#dcdcdc] rounded-3xl overflow-hidden flex flex-col justify-end relative bg-no-repeat bg-cover bg-center"
+            style={{
+              backgroundImage: `url('/images/image.png')`,
+              backgroundSize: '47px',
+            }}
+          >
             <div className="absolute top-6 right-6 z-10">
-              <div className="bg-white rounded-lg p-2 shadow-sm">
-                <Bookmark className="w-6 h-6 fill-[#000000] text-[#000000]" />
-              </div>
+              <Bookmark className="w-6 h-6 fill-[#000000] text-[#000000]" />
             </div>
-            <div className="aspect-[4/3] bg-[#dcdcdc] flex items-center justify-center">
-              <div className="w-16 h-16 text-[#9a9998]">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                  <circle cx="8.5" cy="8.5" r="1.5" />
-                  <polyline points="21 15 16 10 5 21" />
-                </svg>
-              </div>
-            </div>
-            <div className="p-8">
-              <h3 className="text-2xl font-bold text-[#000000]">Tagines and Ceramics for Professionals</h3>
-            </div>
+            <h3 className="text-lg font-semibold text-[#000000] p-6">Tagines and Ceramics for Professionals</h3>
           </div>
-          <div className="bg-[#dcdcdc] rounded-3xl overflow-hidden flex flex-col relative">
+          <div
+            className="bg-[#dcdcdc] rounded-3xl overflow-hidden flex flex-col justify-end relative bg-no-repeat bg-cover bg-center"
+            style={{
+              backgroundImage: `url('/images/image.png')`,
+              backgroundSize: '47px',
+            }}
+          >
             <div className="absolute top-6 right-6 z-10">
-              <div className="bg-white rounded-lg p-2 shadow-sm">
-                <Bookmark className="w-6 h-6 fill-[#000000] text-[#000000]" />
-              </div>
+              <Bookmark className="w-6 h-6 fill-[#000000] text-[#000000]" />
             </div>
-            <div className="aspect-[4/3] bg-[#dcdcdc] flex items-center justify-center">
-              <div className="w-16 h-16 text-[#9a9998]">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                  <circle cx="8.5" cy="8.5" r="1.5" />
-                  <polyline points="21 15 16 10 5 21" />
-                </svg>
-              </div>
-            </div>
-            <div className="p-8">
-              <h3 className="text-2xl font-bold text-[#000000]">Tagines and Ceramics for Professionals</h3>
-            </div>
+            <h3 className="text-lg font-semibold text-[#000000] p-6">Tagines and Ceramics for Professionals</h3>
           </div>
         </div>
-
         <div className="bg-[#dcdcdc] rounded-3xl overflow-hidden flex flex-col">
-          <div className="h-40 bg-[#dcdcdc] flex items-center justify-center">
-            <div className="w-16 h-16 text-[#9a9998]">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                <circle cx="8.5" cy="8.5" r="1.5" />
-                <polyline points="21 15 16 10 5 21" />
-              </svg>
+          <div className="h-40 bg-[#dcdcdc] flex items-center justify-center relative">
+            <div className="flex flex-col absolute top-4 right-4 gap-2">
+              <Badge variant={'default'} className="rounded-full font-outfit text-xs">
+                Verified
+              </Badge>
+              <Badge variant={'secondary'} className="rounded-full font-outfit">
+                In stock
+              </Badge>
             </div>
+            <Image className="w-16 h-16 text-[#9a9998]" />
           </div>
-          <div className="p-8 flex-1 flex flex-col">
+          <div className="p-8 pt-0 flex-1 flex flex-col">
             <h3 className="text-lg font-semibold mb-3 text-[#363431]">Authentic Moroccan Spices</h3>
             <p className="text-[#6d6a6a] text-xs mb-4 leading-relaxed font-inter font-normal">
               Bring the vibrant heart of Moroccan cuisine to your business. Our wholesale spice collection is sourced
               directly from reliable growers..
             </p>
+            <div className="text-base font-bold mb-2 text-[#000000]">
+              455 DH- 699 DH <span className="text-sm font-normal text-[#6d6a6a]">/ unit</span>
+            </div>
+            <div className="text-xs text-[#363431] mb-3 font-normal">Fez, Morocco</div>
+            <div className="flex items-center gap-1 mb-4 text-sm">
+              <Star className="w-3 h-3 fill-[#3E3E3E] text-[#000000]" />
+              <span className="font-semibold text-[#292826]">4,7</span>
+              <span className="text-xs text-[#6d6a6a] font-normal">Moroccan Craft House</span>
+            </div>
             <div className="mt-auto">
-              <div className="text-base font-bold mb-2 text-[#000000]">
-                455 DH- 699 DH <span className="text-sm font-normal text-[#6d6a6a]">/ unit</span>
-              </div>
-              <div className="text-sm text-[#363431] mb-3">Fez, Morocco</div>
-              <div className="flex items-center gap-1 mb-4 text-sm">
-                <Star className="w-4 h-4 fill-[#000000] text-[#000000]" />
-                <span className="font-bold text-[#000000]">4,7</span>
-                <span className="text-[#6d6a6a]">Moroccan Craft House</span>
-              </div>
               <div className="flex gap-1">
                 <Button className="bg-[#363431] hover:bg-[#464847] text-white text-xs rounded-full font-medium">
                   Request Quote
