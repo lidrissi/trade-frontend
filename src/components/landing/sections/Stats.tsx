@@ -32,7 +32,7 @@ export default function Stats() {
               <h3 className="text-[#ffffff] text-5xl font-bold leading-none">{stat.value}</h3>
               <p className="text-[#ffffff] text-base font-bold leading-relaxed">{stat.label}</p>
             </div>
-            {index !== stats.length - 1 && <div className="h-full w-0.25 bg-white" />}
+            {index !== stats.length - 1 && <div className="hidden lg:blockh-full w-0.25 bg-white" />}
           </div>
         ))}
       </div>

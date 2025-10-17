@@ -3,6 +3,7 @@ import { ArrowUpRight, CircleUser, CircleUserRound, Globe, ShoppingCart, User } 
 import Link from 'next/link';
 import HamburgerBtnMenu from './HamburgerBtnMenu';
 import { Navigation } from './Navigation';
+import SearchBar from '../sections/SearchBar';
 
 export default function LandingHeader() {
   return (
@@ -38,9 +39,12 @@ export default function LandingHeader() {
               <ArrowUpRight className="w-4 h-4" />
             </Button>
           </div>
-          <Button variant="default" size="sm" className="md:hidden rounded-full  flex items-center">
-            Sign in
-          </Button>
+          <div className="flex items-center md:hidden">
+            <SearchBar />
+            <Button variant="default" size="sm" className="md:hidden rounded-full  flex items-center">
+              Sign in
+            </Button>
+          </div>
         </div>
       </div>
     </header>
