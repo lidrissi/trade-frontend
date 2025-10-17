@@ -16,14 +16,14 @@ export default function Landing(): React.ReactElement {
       <Banner />
       <LandingHeader />
       <Hero />
-      {/* <Categories />
+      <Categories />
       <Why />
       <DailyBestSells />
       <Stats />
       <Stories />
       <HowItWorks />
       <Sponsors />
-      <LandingFooter /> */}
+      <LandingFooter />
     </>
   );
 }

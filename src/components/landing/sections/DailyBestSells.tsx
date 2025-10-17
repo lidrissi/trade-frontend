@@ -12,7 +12,7 @@ export default function DailyBestSells() {
           <div className="flex items-center">
             <h1 className="text-2xl font-bold text-black">Daily Best Sells</h1>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-4">
             {navItems.map((item, index) => (
               <a key={index} href="#" className="text-base font-semibold text-[#253D4E]">
                 {item}
@@ -22,14 +22,16 @@ export default function DailyBestSells() {
         </div>
       </nav>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        <aside className="flex flex-col justify-between text-white bg-[#242424] rounded-2xl">
-          <div className="py-8 px-10">
-            <h1 className="text-3xl font-bold">Browse a diverse catalog, designed for international businesses</h1>
+        <aside className="flex flex-row sm:flex-col justify-between text-white bg-[#242424] rounded-2xl">
+          <div className="py-8 sm:px-10">
+            <h1 className="text-xl sm:text-3xl font-bold">
+              Browse a diverse catalog, designed for international businesses
+            </h1>
           </div>
           <div className="mt-2 flex-shrink-1 bg-[#f7f7f7] text-[#000000] p-8 rounded-2xl">
-            <h2 className="text-lg font-bold mb-6">Explorez le catalogue</h2>
+            <h2 className="text-lg font-bold mb-6 text-nowrap">Explorez le catalogue</h2>
             <nav className="space-y-2">
-              <a href="#" className="block text-base font-medium underline hover:no-underline">
+              <a href="#" className="block text-base font-medium underline hover:no-underline text-nowrap">
                 All Categories
               </a>
               <a href="#" className="block text-base font-medium underline hover:no-underline">
@@ -87,7 +89,7 @@ export default function DailyBestSells() {
         </div>
         <div className="grid gap-6">
           <div
-            className="bg-[#dcdcdc] rounded-3xl overflow-hidden flex flex-col justify-end relative bg-no-repeat bg-cover bg-center"
+            className="bg-[#dcdcdc] min-h-80 rounded-3xl overflow-hidden flex flex-col justify-end relative bg-no-repeat bg-cover bg-center"
             style={{
               backgroundImage: `url('/images/image.png')`,
               backgroundSize: '47px',
@@ -99,7 +101,7 @@ export default function DailyBestSells() {
             <h3 className="text-lg font-semibold text-[#000000] p-6">Tagines and Ceramics for Professionals</h3>
           </div>
           <div
-            className="bg-[#dcdcdc] rounded-3xl overflow-hidden flex flex-col justify-end relative bg-no-repeat bg-cover bg-center"
+            className="min-h-80 bg-[#dcdcdc] rounded-3xl overflow-hidden flex flex-col justify-end relative bg-no-repeat bg-cover bg-center"
             style={{
               backgroundImage: `url('/images/image.png')`,
               backgroundSize: '47px',

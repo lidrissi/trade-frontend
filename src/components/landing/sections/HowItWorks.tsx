@@ -59,7 +59,7 @@ export default function HowItWorks() {
         </div>
       </div>
       <div className="container mx-auto bg-white rounded-3xl p-10 md:p-12">
-        <h2 className="text-2xl md:text-xl font-bold text-black text-center mb-8">
+        <h2 className="text-lg md:text-xl font-bold text-black text-center mb-8">
           Un parcours d'achat B2B fluide & sécurisé - Buyers
         </h2>
         <div className="relative">
@@ -74,7 +74,7 @@ export default function HowItWorks() {
                     step.active ? 'bg-[#414342]' : 'bg-[#eeeeee]'
                   }`}
                 ></div>
-                <h3 className="font-bold text-black text-sm mb-3">{step.title}</h3>
+                <h3 className="font-bold text-black text-xs md:text-sm mb-3">{step.title}</h3>
                 <p className="text-[#423d3d] text-xs leading-relaxed hidden md:block">{step.description}</p>
               </div>
             ))}

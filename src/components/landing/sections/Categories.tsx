@@ -43,20 +43,20 @@ export default function Categories() {
   return (
     <div className="container px-6 mx-auto bg-white">
       <div className="grid lg:grid-cols-[1fr_auto] gap-8 py-8 lg:py-8">
-        <div className="bg-[#0F0E0E] rounded-3xl p-10 lg:p-10 flex items-center">
-          <h1 className="text-white text-3xl font-bold font-outfit">
+        <div className="sm:bg-[#0F0E0E] rounded-3xl p-10 lg:p-10 flex items-center">
+          <h1 className="text-sm sm:text-white sm:text-3xl font-bold font-outfit">
             Browse a diverse catalogue, designed for international businesses
           </h1>
         </div>
 
         {/* Navigation Section */}
-        <div className="flex flex-row justify-between min-w-[400px] bg-[#F7F7F7] rounded-3xl p-10">
+        <div className="flex flex-row justify-between  bg-[#0C0C0C] sm:bg-[#F7F7F7] rounded-3xl p-10">
           <div className="flex flex-col justify-between">
-            <h2 className="text-black text-xl font-semibold mb-8 font-outfit">Explorez le catalogue</h2>
+            <h2 className="hidden sm:block text-black text-xl font-semibold mb-8 font-outfit">Explorez le catalogue</h2>
             <div className="flex items-center gap-4 mb-2">
               <a
                 href="#"
-                className="text-[#393737] text-lg font-medium underline underline-offset-4 decoration-2 font-inter"
+                className="text-white sm:text-[#393737] text-lg font-medium underline underline-offset-4 decoration-2 font-inter"
               >
                 All categories
               </a>
