@@ -41,7 +41,7 @@ export default function LandingHeader() {
           </div>
           <div className="flex items-center md:hidden">
             <SearchBar />
-            <Button variant="default" size="sm" className="md:hidden rounded-full  flex items-center">
+            <Button variant="default" size="sm" className="hidden rounded-full  md:flex items-center">
               Sign in
             </Button>
           </div>
