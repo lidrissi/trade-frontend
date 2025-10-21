@@ -1,6 +1,6 @@
 import Banner from './layout/Banner';
 import LandingFooter from './layout/Footer';
-import LandingHeader from './layout/Header';
+import LandingHeader from './layout/header';
 import Categories from './sections/Categories';
 import DailyBestSells from './sections/DailyBestSells';
 import Hero from './sections/Hero';
