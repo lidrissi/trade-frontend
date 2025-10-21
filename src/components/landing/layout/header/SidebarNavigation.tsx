@@ -70,7 +70,6 @@ const SidebarNavigation: React.FC<SidebarNavigationProps> = ({ data }) => {
 
   return (
     <div>
-      <span>Discover the most outstanding articles on all topics of life. Write your stories and share them</span>
       <ul className="flex flex-col gap-y-1 px-2 py-6">{data?.map(_renderItem)}</ul>
     </div>
   );

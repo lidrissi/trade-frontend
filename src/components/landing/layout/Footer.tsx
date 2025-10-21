@@ -4,15 +4,6 @@ import { Button } from '@/components/ui/button';
 export default function LandingFooter() {
   return (
     <>
-      <div className="relative mx-auto w-72 h-52">
-        <div className="absolute top-0 w-40 h-20 bg-red-500 z-20 flex items-center justify-center text-white">
-          Top Div
-        </div>
-        <div className="absolute top-10     w-full h-40 bg-blue-300 z-10 flex items-center justify-center">
-          Bottom Div visible behind
-        </div>
-      </div>
-
       <div className="flex flex-col font-inter">
         <section className="mx-16 bg-[#505050] px-20 py-8 md:py-10 rounded-2xl translate-y-1/2">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
@@ -146,11 +137,6 @@ export default function LandingFooter() {
             </div>
           </div>
         </footer>
-      </div>
-      <div className="relative">
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-red-500 z-10"></div>
-        <div className="bg-gray-100 p-4"></div>
-        <footer className="bg-gray-200 p-4"></footer>
       </div>
     </>
   );

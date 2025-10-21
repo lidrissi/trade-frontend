@@ -10,230 +10,25 @@ export async function getNavigation(): Promise<TNavigationItem[]> {
       href: '/collections/page-style-2/all',
       name: 'Shop',
     },
-    {
-      id: '3',
-      href: '/collections/all',
-      name: 'Beauty',
-    },
-    {
-      id: '4',
-      href: '/collections/page-style-2/all',
-      name: 'Sport',
-    },
-    {
-      id: '5',
-      href: '/collections/all',
-      name: 'Templates',
-      type: 'mega-menu',
-      children: [
-        {
-          id: '1',
-          href: '/',
-          name: 'Home Page',
-          type: 'dropdown',
-          children: [
-            {
-              id: '1-1',
-              href: '/',
-              name: 'Home 1',
-            },
-            {
-              id: '1-2',
-              href: '/home-2',
-              name: 'Home 2',
-            },
-            { id: '1-3', href: '/', name: 'Header 1' },
-            { id: '1-4', href: '/home-2', name: 'Header 2' },
-            { id: '1-5', href: '/coming-soon', name: 'Coming Soon' },
-          ],
-        },
-        {
-          id: '2',
-          href: '/#',
-          name: 'Shop Pages',
-          type: 'dropdown',
-          children: [
-            { id: '2-1', href: '/collections/sale-collection', name: 'Collection 1' },
-            { id: '2-2', href: '/collections/page-style-2/sale-collection', name: 'Collection 2' },
-            { id: '2-3', href: '/products/leather-tote-bag', name: 'Product 1' },
-            { id: '2-4', href: '/products/page-style-2/leather-tote-bag', name: 'Product 2' },
-            { id: '2-5', href: '/cart', name: 'Cart' },
-            { id: '2-6', href: '/checkout', name: 'Checkout', children: [] },
-            { id: '2-7', href: '/orders', name: 'Orders history' },
-          ],
-        },
-        {
-          id: '3',
-          href: '/#',
-          name: 'Other Pages',
-          type: 'dropdown',
-          children: [
-            { id: '3-2', href: '/search', name: 'Search' },
-            { id: '3-4', href: '/account', name: 'Account' },
-            { id: '3-3', href: '/order-successful', name: 'Order Successful' },
-            { id: '3-1', href: '/checkout', name: 'Checkout' },
-            { id: '3-5', href: '/orders', name: 'Orders history' },
-            { id: '3-6', href: '/orders/4657', name: 'Order detail' },
-            { id: '3-7', href: '/subscription', name: 'Subscription' },
-          ],
-        },
-        {
-          id: '4',
-          href: '/#',
-          name: 'Other Pages',
-          type: 'dropdown',
-          children: [
-            { id: '4-1', href: '/blog', name: 'Blog' },
-            { id: '4-2', href: '/blog/graduation-dresses-style-guide', name: 'Blog Single' },
-            { id: '4-3', href: '/about', name: 'About' },
-            { id: '4-4', href: '/contact', name: 'Contact' },
-            { id: '4-5', href: '/login', name: 'Login' },
-            { id: '4-6', href: '/signup', name: 'Signup' },
-            { id: '4-7', href: '/forgot-password', name: 'Forgot Password' },
-          ],
-        },
-      ],
-    },
-    {
-      id: '6',
-      href: '/collections/page-style-2/all',
-      name: 'Explore',
-      type: 'dropdown',
-      children: [
-        {
-          id: '3',
-          href: '/collections/all',
-          name: 'Collection pages',
-          type: 'dropdown',
-          children: [
-            {
-              id: '3-1',
-              href: '/collections/all',
-              name: 'Collection 1',
-            },
-            {
-              id: '3-2',
-              href: '/collections/page-style-2/all',
-              name: 'Collection 2',
-            },
-          ],
-        },
-        {
-          id: '4',
-          href: '/products/leather-tote-bag',
-          name: 'Product Pages',
-          type: 'dropdown',
-          children: [
-            {
-              id: '4-1',
-              href: '/products/leather-tote-bag',
-              name: 'Product 1',
-            },
-            {
-              id: '4-2',
-              href: '/products/page-style-2/leather-tote-bag',
-              name: 'Product 2',
-            },
-          ],
-        },
-        {
-          id: '5',
-          href: '/cart',
-          name: 'Cart Page',
-        },
-        {
-          id: '6',
-          href: '/checkout',
-          name: 'Checkout',
-        },
-        {
-          id: 'gid://6',
-          href: '/orders',
-          name: 'Orders',
-        },
-        {
-          id: '7',
-          href: '/search',
-          name: 'Search Page',
-        },
-        {
-          id: '8',
-          href: '/account',
-          name: 'Account Page',
-        },
-        {
-          id: '9',
-          href: '/about',
-          name: 'Other Pages',
-          type: 'dropdown',
-          children: [
-            {
-              id: '9-1',
-              href: '/about',
-              name: 'About',
-            },
-            {
-              id: '9-2',
-              href: '/contact',
-              name: 'Contact us',
-            },
-            {
-              id: '9-3',
-              href: '/login',
-              name: 'Login',
-            },
-            {
-              id: '9-4',
-              href: '/signup',
-              name: 'Signup',
-            },
-            {
-              id: '9-5',
-              href: '/subscription',
-              name: 'Subscription',
-            },
-            { id: '9-6', href: '/forgot-pass', name: 'Forgot Password' },
-          ],
-        },
-        {
-          id: '10',
-          href: '/blog',
-          name: 'Blog Page',
-          type: 'dropdown',
-          children: [
-            {
-              id: '10-1',
-              href: '/blog',
-              name: 'Blog Page',
-            },
-            {
-              id: '10-2',
-              href: '/blog/graduation-dresses-style-guide',
-              name: 'Blog Single',
-            },
-          ],
-        },
-      ],
-    },
-  ]
+  ];
 }
 
 export async function getNavMegaMenu(): Promise<TNavigationItem> {
-  const navigation = await getNavigation()
+  const navigation = await getNavigation();
 
   // Find the mega menu item in the navigation array
-  return navigation[4]
+  return navigation[4];
 }
 
 // ============ TYPE =============
 export type TNavigationItem = Partial<{
-  id: string
-  href: string
-  name: string
-  type?: 'dropdown' | 'mega-menu'
-  isNew?: boolean
-  children?: TNavigationItem[]
-}>
+  id: string;
+  href: string;
+  name: string;
+  type?: 'dropdown' | 'mega-menu';
+  isNew?: boolean;
+  children?: TNavigationItem[];
+}>;
 
 export const getLanguages = async () => {
   return [
@@ -245,37 +40,13 @@ export const getLanguages = async () => {
       active: true,
     },
     {
-      id: 'Vietnamese',
-      name: 'Vietnamese',
-      description: 'Vietnamese',
-      href: '#',
-    },
-    {
       id: 'Francais',
       name: 'Francais',
       description: 'Belgique',
       href: '#',
     },
-    {
-      id: 'Francais',
-      name: 'Francais',
-      description: 'Canada',
-      href: '#',
-    },
-    {
-      id: 'Francais',
-      name: 'Francais',
-      description: 'Belgique',
-      href: '#',
-    },
-    {
-      id: 'Francais',
-      name: 'Francais',
-      description: 'Canada',
-      href: '#',
-    },
-  ]
-}
+  ];
+};
 export const getCurrencies = async () => {
   return [
     {
@@ -333,8 +104,8 @@ export const getCurrencies = async () => {
     <path d="M9 7.5C9.2 8.41667 10.08 10.5 12 11.5M12 11.5C13.92 10.5 14.8 8.41667 15 7.5M12 11.5V16.5M14.5 13.5H9.5" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
 </svg>`,
     },
-  ]
-}
+  ];
+};
 
 export const getHeaderDropdownCategories = async () => {
   return [
@@ -394,5 +165,5 @@ export const getHeaderDropdownCategories = async () => {
     </svg>
      `,
     },
-  ]
-}
+  ];
+};
