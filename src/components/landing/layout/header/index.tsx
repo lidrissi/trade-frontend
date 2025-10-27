@@ -1,22 +1,16 @@
 import { Button } from '@/components/ui/button';
-import { ArrowUpRight, CircleUserRound, Globe, ShoppingCart } from 'lucide-react';
-import Link from 'next/link';
+import { ArrowUpRight, Globe, ShoppingCart, UserRound } from 'lucide-react';
 import SearchBar from '../../sections/SearchBar';
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
+import { Disclosure } from '@headlessui/react';
 import AsideSidebarNavigation from './aside-sidebar-navigation';
 import HamburgerBtnMenu from './HamburgerBtnMenu';
+import { Navigation } from '../Navigation';
+import Logo from '@/components/Logo';
 
 export default function Header() {
   function classNames(...classes: string[]): string {
     return classes.filter(Boolean).join(' ');
   }
-
-  const navigation = [
-    { name: 'Home', href: '#', current: false },
-    { name: 'Buyer Central', href: '#', current: true },
-    { name: 'Help Center', href: '#', current: false },
-    { name: 'Become a supplier', href: '#', current: false },
-  ];
 
   return (
     <div className="h-full">
@@ -25,61 +19,40 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-6 border-b border-[#e5e5e5] bg-[#ffffff] container  py-4">
           <div className="flex  items-center justify-between text-black ">
             <div className="flex items-center gap-4">
-              <div className="flex flex-1 items-center xl:hidden">
-                <div className="-mr-2 flex md:hidden">
-                  <HamburgerBtnMenu />
-                </div>
+              <div className="flex-1 items-center mr-2 flex lg:hidden">
+                <HamburgerBtnMenu />
               </div>
-              <Link href="/" className="text-base md:text-[22px] font-black font-inter tracking-[-2%]  ">
-                Trade.ma
-              </Link>
+              <Logo />
             </div>
-            <div className="hidden md:flex items-center gap-6 font-work-sans text-base">
+            <Navigation />
+            <div className="hidden md:flex items-center gap-6 font-work-sans text-sm">
               <button className="flex items-center gap-2  hover:opacity-70 transition-opacity">
-                <Globe className="w-6 h-6" />
+                <Globe className="w-5 h-5" />
                 <span className="font-medium">EN</span>
               </button>
 
               <button className=" hover:opacity-70 transition-opacity">
-                <ShoppingCart className="w-6 h-6" />
+                <ShoppingCart className="w-5 h-5" />
               </button>
 
-              <button className="flex items-center gap-2  hover:opacity-70 transition-opacity">
-                <CircleUserRound className="w-6 h-6" />
+              <button className="flex items-center gap-2  hover:opacity-70 transition-opacity font-normal text-sm font-poppins">
+                <UserRound className="w-5 h-5" />
                 <span>Sign in</span>
               </button>
 
-              <Button className="font-inter font-base gap-1.5 px-3 has-[>svg]:px-2.5 rounded-full bg-[#151515] sm:h-11 sm:px-6 sm:has-[>svg]:px-8">
+              <Button className="hidden md:flex font-work-sans font-base gap-1.5 px-3 has-[>svg]:px-2.5 rounded-full bg-cyan sm:h-11 sm:px-6 sm:has-[>svg]:px-8 hover:bg-cyan/90">
                 Create account
                 <ArrowUpRight className="w-4 h-4" />
               </Button>
             </div>
-            <div className="flex items-center md:hidden">
+            <div className="flex items-center md:hidden gap-1">
               <SearchBar />
-              <Button variant="default" size="sm" className="hidden rounded-full  md:flex items-center">
+              <Button variant="default" size="sm" className="rounded-full bg-cyan hover:bg-cyan/90 items-center">
                 Sign in
               </Button>
             </div>
           </div>
         </div>
-        <DisclosurePanel className="md:hidden h-full">
-          <div className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-            {navigation.map((item) => (
-              <DisclosureButton
-                key={item.name}
-                as="a"
-                href={item.href}
-                aria-current={item.current ? 'page' : undefined}
-                className={classNames(
-                  item.current ? 'bg-blue-500 text-white' : 'text-black',
-                  'block rounded-md px-3 py-2 text-base font-medium'
-                )}
-              >
-                {item.name}
-              </DisclosureButton>
-            ))}
-          </div>
-        </DisclosurePanel>
       </Disclosure>
     </div>
   );

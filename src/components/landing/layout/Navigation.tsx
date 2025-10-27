@@ -10,10 +10,10 @@ export const Navigation = () => {
   ];
 
   return (
-    <nav className="hidden xl:flex items-center font-work-sans text-base font-medium gap-3">
+    <nav className="hidden lg:flex items-center font-work-sans text-sm font-medium gap-3">
       {navigationLinks.map(({ id, name, href }, index) => (
         <Fragment key={id}>
-          <Link href={href} className="hover:opacity-70 transition-opacity duration-200">
+          <Link href={href} className="hover:opacity-70 transition-opacity duration-200 font-normal font-poppins">
             {name}
           </Link>
           {navigationLinks?.length - 1 !== index && <span className="">|</span>}

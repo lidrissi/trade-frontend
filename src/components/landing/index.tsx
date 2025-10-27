@@ -17,7 +17,7 @@ export default function Landing(): React.ReactElement {
       <LandingHeader />
       <Hero />
       <Categories />
-      <Why />
+      {/* <Why /> */}
       <DailyBestSells />
       <Stats />
       <Stories />

@@ -1,15 +1,9 @@
 export async function getNavigation(): Promise<TNavigationItem[]> {
   return [
-    {
-      id: '1',
-      href: '/',
-      name: 'Home',
-    },
-    {
-      id: '2',
-      href: '/collections/page-style-2/all',
-      name: 'Shop',
-    },
+    { id: '1', name: 'Home', href: '#' },
+    { id: '2', name: 'Buyer Central', href: '#' },
+    { id: '3', name: 'Help Center', href: '#' },
+    { id: '4', name: 'Become a supplier', href: '#' },
   ];
 }
 

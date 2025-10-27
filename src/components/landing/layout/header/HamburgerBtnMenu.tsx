@@ -13,7 +13,7 @@ const HamburgerBtnMenu = () => {
       className="-m-2.5 flex cursor-pointer items-center justify-center rounded-full p-2.5 hover:bg-neutral-100 focus-visible:outline-0 dark:hover:bg-neutral-700"
     >
       <span className="sr-only">Open main menu</span>
-      <Menu size={24} color="currentColor" strokeWidth={1.5} />
+      <Menu size={20} color="#000" strokeWidth={1.5} />
     </button>
   );
 };

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { AppProviders } from '@/providers';
 import { use } from 'react';
-import { Inter, Outfit, Quicksand, Work_Sans } from 'next/font/google';
+import { Inter, Outfit, Quicksand, Work_Sans, Poppins } from 'next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -23,6 +23,14 @@ const outfit = Outfit({
 const workSans = Work_Sans({
   subsets: ['latin'],
   variable: '--font-work-sans',
+  fallback: ['sans-serif'],
+  display: 'swap',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  variable: '--font-poppins',
   fallback: ['sans-serif'],
   display: 'swap',
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -51,7 +59,9 @@ export default function RootLayout({
   const { locale } = use(params);
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${outfit.variable} ${workSans.variable} ${quicksand.variable}`}>
+      <body
+        className={`${inter.variable} ${outfit.variable} ${workSans.variable} ${quicksand.variable} ${poppins.variable}`}
+      >
         <AppProviders locale={locale}>{children}</AppProviders>
       </body>
     </html>

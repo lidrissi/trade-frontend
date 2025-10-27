@@ -1,8 +1,6 @@
 import { MenuIcon } from 'lucide-react';
 
 const HamburgerBtnMenu = () => {
-  // const { open: openAside } = useAside()
-
   return (
     <button
       type="button"

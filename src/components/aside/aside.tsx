@@ -4,6 +4,7 @@ import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/re
 import clsx from 'clsx';
 import { X } from 'lucide-react';
 import { createContext, useContext, useState, type ReactNode } from 'react';
+import Logo from '../Logo';
 
 /**
  * Drawer component that opens on user click.
@@ -70,7 +71,7 @@ export function Aside({
                             <span className="text-2xl font-medium">{heading}</span>
                           </DialogTitle>
                         )}
-                        {/* {logoOnHeading && <Logo />} */}
+                        {logoOnHeading && <Logo />}
                       </>
                     )}
 
