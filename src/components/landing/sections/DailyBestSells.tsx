@@ -1,7 +1,8 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import clsx from 'clsx';
-import { ArrowUpRight, Bookmark, Image, MoveRight, Star } from 'lucide-react';
+import { ArrowUpRight, Bookmark, MoveRight, Star } from 'lucide-react';
+import Image from 'next/image';
 
 export default function DailyBestSells() {
   const navItems = [
@@ -59,8 +60,13 @@ export default function DailyBestSells() {
             </nav>
           </div>
         </aside>
-        <div className="bg-[#dcdcdc] rounded-3xl overflow-hidden flex flex-col">
-          <div className="h-40 bg-[#dcdcdc] flex items-center justify-center relative">
+        <div className="bg-brand-light1 rounded-3xl overflow-hidden flex flex-col">
+          <div
+            className="rounded-3xl h-65 bg-brand-light1 flex items-center justify-center relative bg-cover bg-center"
+            style={{
+              backgroundImage: `url('/images/home/best-sells-1.png')`,
+            }}
+          >
             <div className="flex flex-col absolute top-4 right-4 gap-2">
               <Badge variant={'default'} className="rounded-full font-outfit text-xs">
                 Verified
@@ -69,22 +75,20 @@ export default function DailyBestSells() {
                 In stock
               </Badge>
             </div>
-            <Image className="w-16 h-16 text-[#9a9998]" />
           </div>
-          <div className="p-8 pt-0 flex-1 flex flex-col">
-            <h3 className="text-lg font-semibold mb-3 text-[#363431]">Traditional B2B Collection</h3>
-            <p className="text-[#6d6a6a] text-xs mb-4 leading-relaxed font-inter font-normal">
-              Discover our exclusive collection of traditional Moroccan products specially selected for professionals
-              (B2B).
+          <div className="p-8 pt-10 flex-1 flex flex-col">
+            <h3 className="text-lg font-semibold mb-3 text-[#1B2254]">Lorem ipsum dolor sit amet</h3>
+            <p className="text-[#1B2254] text-xs mb-4 leading-relaxed font-inter font-light">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. 
             </p>
-            <div className="text-base font-bold mb-2 text-[#000000]">
+            <div className="text-base font-semibold mb-2 text-[#314068]">
               455 DH- 699 DH <span className="text-sm font-normal text-[#6d6a6a]">/ unit</span>
             </div>
-            <div className="text-xs text-[#363431] mb-3 font-normal">Fez, Morocco</div>
-            <div className="flex items-center gap-1 mb-4 text-sm">
-              <Star className="w-3 h-3 fill-[#3E3E3E] text-[#000000]" />
-              <span className="font-semibold text-[#292826]">4,7</span>
-              <span className="text-xs text-[#6d6a6a] font-normal">Moroccan Craft House</span>
+            <div className="flex items-center gap-1 mb-4 text-xs font-normal">
+              <Star className="w-3 h-3 fill-[#FFB938] text-[#FFB938]" />
+              <span>4,7</span>
+              <span className=" text-[#6d6a6a] font-normal">Lorem ipsum</span>
             </div>
             <div className="mt-auto">
               <div className="flex gap-1">
@@ -92,12 +96,8 @@ export default function DailyBestSells() {
                   Request Quote
                   <ArrowUpRight className="w-4 h-4 ml-2" />
                 </Button>
-                <Button
-                  variant="outline"
-                  className="border-1 border-[#363431] text-[#363431] hover:bg-[#363431] text-xs hover:text-white rounded-full font-medium bg-transparent"
-                >
+                <Button variant="link" className="text-xs font-underline">
                   Details
-                  <ArrowUpRight className="w-4 h-4 ml-2" />
                 </Button>
               </div>
             </div>
@@ -105,32 +105,35 @@ export default function DailyBestSells() {
         </div>
         <div className="grid gap-6">
           <div
-            className="bg-[#dcdcdc] min-h-65 rounded-3xl overflow-hidden flex flex-col justify-end relative bg-no-repeat bg-cover bg-center"
+            className=" bg-brand-light1 min-h-65 rounded-3xl overflow-hidden flex flex-col justify-end relative bg-no-repeat bg-cover bg-center"
             style={{
-              backgroundImage: `url('/images/image.png')`,
-              backgroundSize: '47px',
+              backgroundImage: `url('/images/home/best-sells-3.png')`,
             }}
           >
             <div className="absolute top-6 right-6 z-10">
-              <Bookmark className="w-6 h-6 fill-[#000000] text-[#000000]" />
+              <Bookmark className="w-6 h-6 fill-[#FFB938] text-[#FFB938]" />
             </div>
-            <h3 className="text-lg font-semibold text-[#000000] p-6">Tagines and Ceramics for Professionals</h3>
+            <h3 className="text-lg font-semibold text-white p-6">ffff Lorem ipsum dolor sit amet consectetur </h3>
           </div>
           <div
-            className="min-h-65 bg-[#dcdcdc] rounded-3xl overflow-hidden flex flex-col justify-end relative bg-no-repeat bg-cover bg-center"
+            className="min-h-65 bg-brand-light1 rounded-3xl overflow-hidden flex flex-col justify-end relative bg-no-repeat bg-cover bg-center"
             style={{
-              backgroundImage: `url('/images/image.png')`,
-              backgroundSize: '47px',
+              backgroundImage: `url('/images/home/best-sells-4.png')`,
             }}
           >
             <div className="absolute top-6 right-6 z-10">
-              <Bookmark className="w-6 h-6 fill-[#000000] text-[#000000]" />
+              <Bookmark className="w-6 h-6 fill-[#FFB938] text-[#FFB938]" />
             </div>
-            <h3 className="text-lg font-semibold text-[#000000] p-6">Tagines and Ceramics for Professionals</h3>
+            <h3 className="text-lg font-semibold text-white p-6">Lorem ipsum dolor sit amet consectetur </h3>
           </div>
         </div>
-        <div className="bg-[#dcdcdc] rounded-3xl overflow-hidden flex flex-col">
-          <div className="h-40 bg-[#dcdcdc] flex items-center justify-center relative">
+        <div className="bg-brand-light1 rounded-3xl overflow-hidden flex flex-col">
+          <div
+            className="rounded-3xl h-65 bg-brand-light1 flex items-center justify-center relative bg-cover bg-center"
+            style={{
+              backgroundImage: `url('/images/home/best-sells-2.png')`,
+            }}
+          >
             <div className="flex flex-col absolute top-4 right-4 gap-2">
               <Badge variant={'default'} className="rounded-full font-outfit text-xs">
                 Verified
@@ -139,35 +142,29 @@ export default function DailyBestSells() {
                 In stock
               </Badge>
             </div>
-            <Image className="w-16 h-16 text-[#9a9998]" />
           </div>
-          <div className="p-8 pt-0 flex-1 flex flex-col">
-            <h3 className="text-lg font-semibold mb-3 text-[#363431]">Authentic Moroccan Spices</h3>
-            <p className="text-[#6d6a6a] text-xs mb-4 leading-relaxed font-inter font-normal">
-              Bring the vibrant heart of Moroccan cuisine to your business. Our wholesale spice collection is sourced
-              directly from reliable growers..
+          <div className="p-8 pt-10 flex-1 flex flex-col">
+            <h3 className="text-lg font-semibold mb-3 text-[#1B2254]">Lorem ipsum dolor sit amet</h3>
+            <p className="text-[#1B2254] text-xs mb-4 leading-relaxed font-inter font-light">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. 
             </p>
-            <div className="text-base font-bold mb-2 text-[#000000]">
+            <div className="text-base font-semibold mb-2 text-[#314068]">
               455 DH- 699 DH <span className="text-sm font-normal text-[#6d6a6a]">/ unit</span>
             </div>
-            <div className="text-xs text-[#363431] mb-3 font-normal">Fez, Morocco</div>
-            <div className="flex items-center gap-1 mb-4 text-sm">
-              <Star className="w-3 h-3 fill-[#3E3E3E] text-[#000000]" />
-              <span className="font-semibold text-[#292826]">4,7</span>
-              <span className="text-xs text-[#6d6a6a] font-normal">Moroccan Craft House</span>
+            <div className="flex items-center gap-1 mb-4 text-xs font-normal">
+              <Star className="w-3 h-3 fill-[#FFB938] text-[#FFB938]" />
+              <span>4,7</span>
+              <span className=" text-[#6d6a6a] font-normal">Lorem ipsum</span>
             </div>
             <div className="mt-auto">
               <div className="flex gap-1">
-                <Button className="bg-[#363431] hover:bg-[#464847] text-white text-xs rounded-full font-medium">
+                <Button className="bg-cyan hover:bg-cyan/90 text-white text-xs rounded-full font-medium">
                   Request Quote
                   <ArrowUpRight className="w-4 h-4 ml-2" />
                 </Button>
-                <Button
-                  variant="outline"
-                  className="border-1 border-[#363431] text-[#363431] hover:bg-[#363431] text-xs hover:text-white rounded-full font-medium bg-transparent"
-                >
+                <Button variant="link" className="text-xs font-underline">
                   Details
-                  <ArrowUpRight className="w-4 h-4 ml-2" />
                 </Button>
               </div>
             </div>
