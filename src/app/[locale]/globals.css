@@ -13,6 +13,7 @@
   --font-sans: var(--font-inter);
   --color-brand: #6d8dff;
   --color-brand-light: #839dfc;
+  --color-brand-light1: #f6f6ff;
   --color-brand-dark: #3b54da;
   --color-cyan: #29d8a0;
   --color-background: var(--background);
@@ -136,5 +137,19 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
   }
 }

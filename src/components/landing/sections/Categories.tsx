@@ -1,10 +1,11 @@
+'use client';
+
+import { useRef, useState, useEffect } from 'react';
+import { ArrowLeft, ArrowRight, BatteryCharging, Cpu, Plug2 } from 'lucide-react';
 import {
-  ChevronLeft,
-  ChevronRight,
   Package,
   Car,
   Shirt,
-  Cookie,
   Wrench,
   Home,
   Ruler,
@@ -15,82 +16,121 @@ import {
   Lightbulb,
   SprayCan as Spray,
   Sprout,
-  MoveRight,
 } from 'lucide-react';
 
-export default function Categories() {
-  const categories = [
-    { icon: Package, label: 'Packaging & Printing' },
-    { icon: Car, label: 'Packaging & Printing' },
-    { icon: Shirt, label: 'Packaging & Printing' },
-    { icon: Shirt, label: 'Packaging & Printing' },
-    { icon: Wrench, label: 'Packaging & Printing' },
-    { icon: Cookie, label: 'Packaging & Printing' },
-    { icon: Home, label: 'Packaging & Printing' },
-    { icon: Ruler, label: 'Packaging & Printing' },
-    { icon: Package, label: 'Packaging & Printing' },
-    { icon: Home, label: 'Packaging & Printing' },
-    { icon: Ruler, label: 'Packaging & Printing' },
-    { icon: Bed, label: 'Packaging & Printing' },
-    { icon: Diamond, label: 'Packaging & Printing' },
-    { icon: ShoppingBag, label: 'Packaging & Printing' },
-    { icon: Gift, label: 'Packaging & Printing' },
-    { icon: Lightbulb, label: 'Packaging & Printing' },
-    { icon: Spray, label: 'Packaging & Printing' },
-    { icon: Sprout, label: 'Packaging & Printing' },
-  ];
+const categories = [
+  { icon: Package, label: 'Packaging & Printing' },
+  { icon: Car, label: 'Packaging & Printing' },
+  { icon: Plug2, label: 'Packaging & Printing' },
+  { icon: Shirt, label: 'Packaging & Printing' },
+  { icon: Wrench, label: 'Packaging & Printing' },
+  { icon: Cpu, label: 'Packaging & Printing' },
+  { icon: BatteryCharging, label: 'Packaging & Printing' },
+  { icon: Ruler, label: 'Packaging & Printing' },
+  { icon: Package, label: 'Packaging & Printing' },
+  { icon: Home, label: 'Packaging & Printing' },
+  { icon: Ruler, label: 'Packaging & Printing' },
+  { icon: Bed, label: 'Packaging & Printing' },
+  { icon: Diamond, label: 'Packaging & Printing' },
+  { icon: ShoppingBag, label: 'Packaging & Printing' },
+  { icon: Gift, label: 'Packaging & Printing' },
+  { icon: Lightbulb, label: 'Packaging & Printing' },
+  { icon: Spray, label: 'Packaging & Printing' },
+  { icon: Sprout, label: 'Packaging & Printing' },
+];
+
+function Categories() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const updateScrollState = () => {
+    if (!scrollContainerRef.current) return;
+
+    const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+    const progress = (scrollLeft / (scrollWidth - clientWidth)) * 100;
+    setScrollProgress(Math.min(progress, 100));
+    setCanScrollLeft(scrollLeft > 0);
+    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+  };
+
+  useEffect(() => {
+    updateScrollState();
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener('scroll', updateScrollState);
+      window.addEventListener('resize', updateScrollState);
+      return () => {
+        container.removeEventListener('scroll', updateScrollState);
+        window.removeEventListener('resize', updateScrollState);
+      };
+    }
+  }, []);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (!scrollContainerRef.current) return;
+    const scrollAmount = 300;
+    scrollContainerRef.current.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth',
+    });
+  };
 
   return (
     <div className="container px-6 mx-auto bg-white">
-      <div className="grid lg:grid-cols-[1fr_auto] gap-8 py-8 lg:py-8">
-        <div className="sm:bg-[#0F0E0E] rounded-3xl p-10 lg:p-10 flex items-center">
-          <h1 className="text-sm sm:text-white sm:text-3xl font-bold font-outfit">
-            Browse a diverse catalogue, designed for international businesses
-          </h1>
-        </div>
-
-        {/* Navigation Section */}
-        <div className="flex flex-row justify-between  bg-[#0C0C0C] sm:bg-[#F7F7F7] rounded-3xl p-10">
-          <div className="flex flex-col justify-between">
-            <h2 className="hidden sm:block text-black text-xl font-semibold mb-8 font-outfit">Explorez le catalogue</h2>
-            <div className="flex items-center gap-4 mb-2">
-              <a
-                href="#"
-                className="text-white sm:text-[#393737] text-lg font-medium underline underline-offset-4 decoration-2 font-inter"
-              >
-                All categories
-              </a>
-              <MoveRight className="w-6 h-6" />
-            </div>
-          </div>
-          <div className="flex gap-1 items-end">
-            <button className="w-12 h-12 rounded-full border-1 border-[#1E1E1E] flex items-center justify-center hover:bg-[#f7f7f7] transition-colors">
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            <button className="w-12 h-12 rounded-full border-1 border-[#1E1E1E] flex items-center justify-center hover:bg-[#f7f7f7] transition-colors">
-              <ChevronRight className="w-6 h-6" />
-            </button>
-          </div>
+      <div className="flex justify-between items-center align-items-center mb-7">
+        <h2 className="text-[#1B2846] text-2xl font-medium font-outfit">Explore Categories</h2>
+        <div className="hidden sm:flex gap-2 items-end">
+          <button
+            onClick={() => scroll('left')}
+            disabled={!canScrollLeft}
+            className="cursor-pointer text-white w-12 h-12 rounded-full  bg-cyan flex items-center justify-center hover:bg-cyan/90 transition-colors"
+          >
+            <ArrowLeft className="w-6 h-6" />
+          </button>
+          <button
+            onClick={() => scroll('right')}
+            disabled={!canScrollRight}
+            className="cursor-pointer text-white w-12 h-12 rounded-full  bg-cyan flex items-center justify-center hover:bg-cyan/90 transition-colors"
+          >
+            <ArrowRight className="w-6 h-6" />
+          </button>
         </div>
       </div>
-
-      {/* <div className="inverted-radius-pseudo bg-gradient-to-r from-cyan-500 to-blue-500 h-64 flex items-center justify-center relative">
-        <span className="text-white font-bold text-xl">Inverted Radius</span>
-      </div> */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-9 gap-4">
-        {categories.map((category, index) => {
-          const Icon = category.icon;
-          return (
+      <div className="mx-auto">
+        <div
+          ref={scrollContainerRef}
+          className="flex gap-4 overflow-x-auto scroll-smooth scrollbar-hide"
+          style={{ scrollBehavior: 'smooth' }}
+        >
+          {categories.map((category, index) => {
+            const Icon = category.icon;
+            return (
+              <div
+                key={index}
+                className="hover:text-white bg-brand-light1 rounded-3xl px-7 py-4 gap-2 flex flex-col items-center justify-center hover:bg-brand-light cursor-pointer hover:shadow-lg hover:scale-105 transition-all duration-300"
+              >
+                <Icon size={46} className="stroke-[1.5] " />
+                <p className="text-[#142F57] hover:text-white text-xs text-center font-medium font-inter">
+                  {category.label}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+        {/* Progress Bar */}
+        <div className="mt-7 flex items-center gap-4">
+          <div className="flex-1 h-1.5 bg-[#F7F7F7] rounded-full overflow-hidden">
             <div
-              key={index}
-              className="bg-[#F7F7F7] rounded-2xl p-4 gap-2 flex flex-col items-center justify-center hover:bg-[#ececec] transition-colors cursor-pointer"
-            >
-              <Icon size={46} className="stroke-[1.5]" />
-              <p className="text-black text-xs text-center font-medium font-inter">{category.label}</p>
-            </div>
-          );
-        })}
+              className="h-full bg-gradient-to-r bg-[#5378FF] rounded-full transition-all duration-300"
+              style={{ width: `${scrollProgress}%` }}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
 }
+
+export default Categories;

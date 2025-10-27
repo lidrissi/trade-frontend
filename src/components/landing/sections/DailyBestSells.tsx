@@ -1,12 +1,18 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowUpRight, Bookmark, Image, Star } from 'lucide-react';
+import clsx from 'clsx';
+import { ArrowUpRight, Bookmark, Image, MoveRight, Star } from 'lucide-react';
 
 export default function DailyBestSells() {
-  const navItems = ['All', 'Deals Of the Day', 'Beauty', 'Cosmetics', 'Textile', 'Agriculture'];
+  const navItems = [
+    { name: 'All', id: 1 },
+    { name: 'Building Machinery', id: 2 },
+    { name: 'Electronic Components', id: 3 },
+    { name: 'Renewable Energy', id: 4 },
+  ];
 
   return (
-    <div className="container px-6 mx-auto bg-white font-outfit my-5">
+    <div className="container px-6 mx-auto bg-white font-outfit my-6">
       <nav>
         <div className="mx-auto flex items-center justify-between py-4">
           <div className="flex items-center">
@@ -14,31 +20,41 @@ export default function DailyBestSells() {
           </div>
           <div className="hidden md:flex items-center gap-4">
             {navItems.map((item, index) => (
-              <a key={index} href="#" className="text-base font-semibold text-[#253D4E]">
-                {item}
+              <a
+                key={index}
+                href="#"
+                className={clsx('text-base font-semibold text-[#253D4E] font-quicksand', item.id === 1 && 'text-cyan')}
+              >
+                {item?.name}
               </a>
             ))}
           </div>
         </div>
       </nav>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        <aside className="flex flex-row sm:flex-col justify-between text-white bg-[#242424] rounded-2xl">
+        <aside className="flex flex-row sm:flex-col justify-between text-white bg-[#3B54DA] rounded-2xl">
           <div className="py-8 sm:px-10">
             <h1 className="text-xl sm:text-3xl font-bold">
               Browse a diverse catalog, designed for international businesses
             </h1>
           </div>
-          <div className="mt-2 flex-shrink-1 bg-[#f7f7f7] text-[#000000] p-8 rounded-2xl">
-            <h2 className="text-lg font-bold mb-6 text-nowrap">Explorez le catalogue</h2>
+          <div className="mt-2 flex-shrink-1 bg-brand-light1 text-[#000000] p-8 rounded-2xl">
+            <h2 className="text-lg font-bold mb-6 text-nowrap">Explore the catalog</h2>
             <nav className="space-y-2">
-              <a href="#" className="block text-base font-medium underline hover:no-underline text-nowrap">
-                All Categories
+              <a
+                href="#"
+                className="flex items-center gap-3 text-base font-medium underline hover:no-underline text-nowrap"
+              >
+                <span> All Categories</span>
+                <MoveRight size={16} />
               </a>
-              <a href="#" className="block text-base font-medium underline hover:no-underline">
-                All Products
+              <a href="#" className="flex items-center gap-3 text-base font-medium underline hover:no-underline">
+                <span> All Products</span>
+                <MoveRight size={16} />
               </a>
-              <a href="#" className="block text-base font-medium underline hover:no-underline">
-                All Suppliers
+              <a href="#" className="flex items-center gap-3 text-base font-medium underline hover:no-underline">
+                <span> All Suppliers</span>
+                <MoveRight size={16} />
               </a>
             </nav>
           </div>
@@ -72,7 +88,7 @@ export default function DailyBestSells() {
             </div>
             <div className="mt-auto">
               <div className="flex gap-1">
-                <Button className="bg-[#363431] hover:bg-[#464847] text-white text-xs rounded-full font-medium">
+                <Button className="bg-cyan hover:bg-cyan/90 text-white text-xs rounded-full font-medium">
                   Request Quote
                   <ArrowUpRight className="w-4 h-4 ml-2" />
                 </Button>
