@@ -27,23 +27,23 @@ export default function Hero() {
           </div>
           <div className="flex items-center gap-2 flex-wrap">
             <div className="flex">
-              <Button className="h-8 gap-1.5 px-3 has-[>svg]:px-2.5 rounded-full bg-[#151515] sm:h-10 sm:px-6 sm:has-[>svg]:px-4">
+              <Button className="font-inter font-base gap-1.5 px-3 has-[>svg]:px-2.5 rounded-full bg-[#151515] sm:h-11 sm:px-6 sm:has-[>svg]:px-8">
                 Explore Products
                 <ArrowUpRight className="ml-2 block sm:hidden" />
               </Button>
-              <Button size="icon-lg" className="hidden sm:flex rounded-full bg-[#151515]">
+              <Button className="size-11 hidden sm:flex rounded-full bg-[#151515]">
                 <ArrowUpRight />
               </Button>
             </div>
             <div className="flex">
               <Button
                 variant="outline"
-                className="h-8 gap-1.5 px-3 has-[>svg]:px-2.5 rounded-full sm:h-10 sm:px-6 sm:has-[>svg]:px-4"
+                className="font-inter text-base gap-1.5 px-4 has-[>svg]:px-4 rounded-full sm:h-11 sm:px-8 sm:has-[>svg]:px-8"
               >
                 Join as Supplier
                 <ArrowUpRight className="ml-2 block sm:hidden" />
               </Button>
-              <Button variant="outline" size="icon-lg" className="hidden sm:flex rounded-full">
+              <Button variant="outline" className="size-11 hidden sm:flex rounded-full">
                 <ArrowUpRight />
               </Button>
             </div>

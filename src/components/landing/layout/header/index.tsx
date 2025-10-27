@@ -49,7 +49,7 @@ export default function Header() {
                 <span>Sign in</span>
               </button>
 
-              <Button variant="default" size="lg" className="rounded-full  flex items-center">
+              <Button className="font-inter font-base gap-1.5 px-3 has-[>svg]:px-2.5 rounded-full bg-[#151515] sm:h-11 sm:px-6 sm:has-[>svg]:px-8">
                 Create account
                 <ArrowUpRight className="w-4 h-4" />
               </Button>

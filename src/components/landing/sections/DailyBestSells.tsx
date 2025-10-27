@@ -89,7 +89,7 @@ export default function DailyBestSells() {
         </div>
         <div className="grid gap-6">
           <div
-            className="bg-[#dcdcdc] min-h-80 rounded-3xl overflow-hidden flex flex-col justify-end relative bg-no-repeat bg-cover bg-center"
+            className="bg-[#dcdcdc] min-h-65 rounded-3xl overflow-hidden flex flex-col justify-end relative bg-no-repeat bg-cover bg-center"
             style={{
               backgroundImage: `url('/images/image.png')`,
               backgroundSize: '47px',
@@ -101,7 +101,7 @@ export default function DailyBestSells() {
             <h3 className="text-lg font-semibold text-[#000000] p-6">Tagines and Ceramics for Professionals</h3>
           </div>
           <div
-            className="min-h-80 bg-[#dcdcdc] rounded-3xl overflow-hidden flex flex-col justify-end relative bg-no-repeat bg-cover bg-center"
+            className="min-h-65 bg-[#dcdcdc] rounded-3xl overflow-hidden flex flex-col justify-end relative bg-no-repeat bg-cover bg-center"
             style={{
               backgroundImage: `url('/images/image.png')`,
               backgroundSize: '47px',

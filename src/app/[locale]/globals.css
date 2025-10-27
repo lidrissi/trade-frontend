@@ -10,6 +10,10 @@
   --font-quicksand: var(--font-quicksand);
   --font-satoshi: 'Satoshi', sans-serif;
   --font-sans: var(--font-inter);
+  --color-brand: #6d8dff;
+  --color-brand-light: #839dfc;
+  --color-brand-dark: #3b54da;
+  --color-accent: #29d8a0;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-sidebar-ring: var(--sidebar-ring);
