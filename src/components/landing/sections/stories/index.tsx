@@ -24,10 +24,10 @@ export default function Stories() {
       image: 'story3.png',
     },
   ];
-  return (
-    <div className="container px-6 mx-auto">
-      <h1 className="text-3xl font-bold text-black text-center mb-4">Success Stories</h1>
 
+  return (
+    <div className="container  px-6 mx-auto">
+      <h1 className="text-3xl font-bold text-black text-center mb-4">Success Stories</h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 justify-between">
         <div className="flex flex-col gap-6 justify-between">
           {storiesItems.map((item, index) => (

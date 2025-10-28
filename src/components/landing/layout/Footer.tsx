@@ -1,44 +1,11 @@
-import { ArrowUpRight, Twitter, Facebook, Instagram, Github } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Twitter, Facebook, Instagram, Github } from 'lucide-react';
 
 export default function LandingFooter() {
   return (
     <div className="flex flex-col font-inter mt-10">
-      <section className=" bg-[#505050] px-20 py-8 md:py-10">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex-1">
-            <h1 className="text-white text-3xl md:text-4xl font-medium mb-4 font-outfit">
-              Ready to Start Trade Journey?
-            </h1>
-            <p className="text-[#d6dce5] text-base font-normal font-inter">
-              Join thousands of businesses already trading authentic Moroccan products
-            </p>
-          </div>
-          <div className="flex flex-col gap-4 w-full md:w-auto">
-            <div className="flex">
-              <Button variant="outline" size={'lg'} className="rounded-full px-12">
-                Je suis Acheteur
-              </Button>
-              <Button size="icon-lg" className="rounded-full bg-black text-white">
-                <ArrowUpRight />
-              </Button>
-            </div>
-            <div className="flex">
-              <Button variant="outline" size={'lg'} className="rounded-full px-12">
-                Je suis Vendeur
-              </Button>
-              <Button size="icon-lg" className="rounded-full bg-black text-white">
-                <ArrowUpRight />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
       <footer className="bg-[#ececec] px-6 py-12 mt-auto font-satoshi">
         <div className="max-w-7xl mx-auto mt-20">
-          {/* Main Footer Content */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-            {/* Brand Column */}
             <div className="lg:col-span-1">
               <h2 className="text-2xl font-bold text-black mb-4">Trade.ma</h2>
               <p className="text-black text-sm leading-relaxed mb-6">

@@ -2,6 +2,7 @@ import Banner from './layout/Banner';
 import LandingFooter from './layout/Footer';
 import LandingHeader from './layout/header';
 import Categories from './sections/Categories';
+import Cta from './sections/Cta';
 import DailyBestSells from './sections/DailyBestSells';
 import Hero from './sections/Hero';
 import HowItWorks from './sections/HowItWorks';
@@ -16,11 +17,11 @@ export default function Landing(): React.ReactElement {
       <LandingHeader />
       <Hero />
       <Categories />
-      {/* <Why /> */}
       <DailyBestSells />
       <Stats />
       <Stories />
       <HowItWorks />
+      <Cta />
       <Sponsors />
       <LandingFooter />
     </>
