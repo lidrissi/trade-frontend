@@ -1,3 +1,4 @@
+import Logo from '@/components/Logo';
 import { Twitter, Facebook, Instagram, Github } from 'lucide-react';
 
 export default function LandingFooter() {
@@ -7,8 +8,8 @@ export default function LandingFooter() {
         <div className="max-w-7xl mx-auto mt-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
             <div className="lg:col-span-1">
-              <h2 className="text-2xl font-bold text-black mb-4">Trade.ma</h2>
-              <p className="text-black text-sm leading-relaxed mb-6">
+              <Logo />
+              <p className="text-black text-sm leading-relaxed my-6">
                 We have clothes that suits your style and which you're proud to wear. From women to men.
               </p>
               <div className="flex gap-3">
