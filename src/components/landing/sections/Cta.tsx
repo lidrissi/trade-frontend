@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function Cta() {
   return (
-    <main className="container mx-auto p-6 font-outfit">
+    <main className="container mx-auto px-6 font-outfit">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="lg:row-span-2 rounded-3xl overflow-hidden shadow-lg">
           <div className="relative min-h-60 h-full bg-cover  bg-no-repeat bg-center flex flex-col justify-end p-8 bg-[linear-gradient(to_top,rgba(0,0,0,1)_0%,transparent_50%),url('/images/home/cta1.png')]">

@@ -3,7 +3,7 @@ import { Twitter, Facebook, Instagram, Github } from 'lucide-react';
 export default function LandingFooter() {
   return (
     <div className="flex flex-col font-inter mt-10">
-      <footer className="bg-[#ececec] px-6 py-12 mt-auto font-satoshi">
+      <footer className="bg-[#D4DBFF] px-6 py-12 mt-auto font-satoshi">
         <div className="max-w-7xl mx-auto mt-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
             <div className="lg:col-span-1">

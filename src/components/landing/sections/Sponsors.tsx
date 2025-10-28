@@ -1,23 +1,18 @@
 export default function Sponsors() {
   return (
-    <main className=" bg-white px-4 font-outfit">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10">
-          <h1 className="text-[#3a3a3a] text-xl sm:text-3xl font-bold mb-4">Partners & Sponsors</h1>
-          <p className="text-black text-base">Simple steps to connect with Moroccan suppliers and grow your business</p>
-        </div>
-        <div className="flex gap-2 sm:gap-4 items-center justify-center flex-wrap">
-          <div className="w-[200px] h-10 sm:h-[80px] bg-[#d9d9d9] rounded-3xl" />
-          <div className="w-[140px] h-10 sm:h-[80px] bg-[#d3d3d3] rounded-3xl" />
-          <div className="w-[270px] h-10 sm:h-[80px] bg-[#dadada] rounded-3xl" />
-          <div className="w-[160px] h-10 sm:h-[80px] bg-[#d9d9d9] rounded-3xl" />
-          <div className="w-[160px] h-10 sm:h-[80px] bg-[#d3d3d3] rounded-3xl" />
-          <div className="w-[140px] h-10 sm:h-[80px] bg-[#dadada] rounded-3xl" />
-          <div className="w-[140px] h-10 sm:h-[80px] bg-[#d3d3d3] rounded-3xl" />
-          <div className="w-[160px] h-10 sm:h-[80px] bg-[#d3d3d3] rounded-3xl" />
-          <div className="w-[140px] h-10 sm:h-[80px] bg-[#dadada] rounded-3xl" />
-          <div className="w-[240px] h-10 sm:h-[80px] bg-[#dadada] rounded-3xl" />
-        </div>
+    <main className="container bg-white px-6 my-15 font-outfit mx-auto">
+      <div className="text-center mb-10">
+        <h1 className="text-[#193786] text-xl sm:text-3xl font-bold mb-4">Partners & Sponsors</h1>
+        <p className="text-[#193786] text-base">
+          Simple steps to connect with Moroccan suppliers and grow your business
+        </p>
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 items-center justify-items-center">
+        {['finance', 'transition-numerique', 'tourisme', 'agriculture', 'um6p', 'ocp'].map((item, index) => (
+          <div key={index}>
+            <img src={`/images/home/partners/${item}.png`} alt="" />
+          </div>
+        ))}
       </div>
     </main>
   );
