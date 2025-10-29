@@ -5,7 +5,7 @@ import Categories from './sections/Categories';
 import Cta from './sections/Cta';
 import DailyBestSells from './sections/DailyBestSells';
 import Hero from './sections/Hero';
-import HowItWorks from './sections/HowItWorks';
+import HowItWorks from './sections/how-it-works';
 import Sponsors from './sections/Sponsors';
 import Stats from './sections/Stats';
 import Stories from './sections/stories';
