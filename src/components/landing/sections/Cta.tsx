@@ -18,14 +18,14 @@ export default function Cta() {
         </div>
         <div className="rounded-3xl overflow-hidden shadow-lg bg-gradient-to-br from-[#839DFC] to-[#6D8DFF] p-8 md:p-12 relative">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-            <div className="flex-1">
-              <h2 className="w-1/2 text-2xl font-bold text-white mb-3 leading-tight">
+            <div className="flex-1 z-10">
+              <h2 className="w-3/4 md:w-1/2 text-2xl font-bold text-white mb-3 leading-tight">
                 Grow Your Business with Trade.ma
               </h2>
               <p className="text-blue-100 mb-6 text-sm">
                 A global network of buyers and access new export opportunities.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+              <div className="flex flex-row gap-4 items-center">
                 <Button variant={'outline'} className=" text-sm rounded-full font-medium">
                   Explore Products
                   <ArrowUpRight className="w-4 h-4 ml-2" />
@@ -47,14 +47,14 @@ export default function Cta() {
         </div>
         <div className="rounded-3xl overflow-hidden shadow-lg bg-gradient-to-br from-[#1D2170] to-[#373FD6] p-8 md:p-12 relative">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-            <div className="flex-1">
-              <h2 className="w-1/2 text-2xl font-bold text-white mb-3 leading-tight">
+            <div className="flex-1 z-10">
+              <h2 className="w-3/4 md:w-1/2 text-2xl font-bold text-white mb-3 leading-tight">
                 Discover Verified Industrial Products
               </h2>
               <p className="text-blue-100 mb-6 text-sm">
                 Materials tailored to your business needs all in one trusted marketplace.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+              <div className="flex flex-row gap-4 items-center">
                 <Button className="bg-cyan hover:bg-cyan/90 text-sm rounded-full font-medium">
                   Join as a Supplier
                   <ArrowUpRight className="w-4 h-4 ml-2" />

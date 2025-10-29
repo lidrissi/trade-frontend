@@ -56,7 +56,7 @@ function Steps() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="hidden md:block">
-        <div className="space-y-8">
+        <div className="space-y-12">
           <div className="relative w-full flex justify-around">
             {steps.map((step, index) => (
               <div key={step.id} className="flex flex-col items-center">
@@ -106,59 +106,43 @@ function Steps() {
       </div>
 
       <div className="md:hidden px-4">
-        <div className="relative">
-          <div className="absolute left-6 top-0 bottom-0 w-1 bg-gray-200" />
+        {steps.map((step, index) => (
+          <div key={step.id} className="flex gap-6">
+            <div className="flex items-start">
+              <img
+                src={`/images/home/how-it-works/step${index + 1}-${currentStep >= index ? 'light' : 'dark'}.svg`}
+                alt={'step-icon'}
+              />
+            </div>
+            <div className="flex flex-col relative items-center flex-shrink-0">
+              <div className="absolute top-0 bottom-0 w-1 bg-gray-200" />
 
-          <div
-            className="absolute left-6 top-0 w-1 bg-blue-600 transition-all duration-500"
-            style={{
-              height: `${((currentStep + 1) / steps.length) * 100}%`,
-            }}
-          />
-          <div className="space-y-8 relative z-10">
-            {steps.map((step, index) => (
-              <div key={step.id} className="flex gap-6">
-                {/* Circle indicator */}
-                <div className="flex flex-col items-center flex-shrink-0">
-                  <div
-                    className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${
-                      index <= currentStep ? 'bg-blue-600 text-white' : 'bg-gray-300 text-gray-600'
-                    }`}
-                  >
-                    <img src={'/images/home/how-it-works/step1-dark.svg'} alt={'step-icon'} className={'w-6 h-6'} />
-                  </div>
-                </div>
+              <div
+                className="absolute top-0 w-1 bg-blue-600 transition-all duration-500"
+                style={{
+                  height: `${((currentStep + 1) / steps.length) * 100}%`,
+                }}
+              />
 
-                <div
-                  className={`pt-1 transition-all duration-500 ${index <= currentStep ? 'opacity-100' : 'opacity-50'}`}
-                >
-                  <h3
-                    className={`text-lg font-bold mb-1 transition-colors duration-500 ${
-                      index <= currentStep ? 'text-blue-600' : 'text-gray-400'
-                    }`}
-                  >
-                    {step.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
-                </div>
-              </div>
-            ))}
+              <div
+                className={`z-10 w-4 h-4 rounded-full flex items-center justify-center transition-all duration-500 ${
+                  index <= currentStep ? 'bg-blue-600 text-white' : 'bg-gray-300 text-gray-600'
+                }`}
+              ></div>
+            </div>
+
+            <div className={`pt-1 transition-all duration-500 ${index <= currentStep ? 'opacity-100' : 'opacity-50'}`}>
+              <h3
+                className={`text-xs font-bold mb-1 transition-colors duration-500 ${
+                  index <= currentStep ? 'text-blue-600' : 'text-gray-400'
+                }`}
+              >
+                {step.title}
+              </h3>
+              <p className="text-xs text-gray-600 leading-relaxed mb-3">{step.description}</p>
+            </div>
           </div>
-        </div>
-
-        {/* Mobile progress indicator dots */}
-        <div className="mt-8 flex justify-center gap-2">
-          {steps.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentStep(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                index === currentStep ? 'w-8 bg-blue-600' : 'w-2 bg-gray-300'
-              }`}
-              aria-label={`Go to step ${index + 1}`}
-            />
-          ))}
-        </div>
+        ))}
       </div>
     </div>
   );

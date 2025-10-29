@@ -1,10 +1,10 @@
 import { ArrowRight } from 'lucide-react';
 
-export default function Home() {
+export default function Explore() {
   return (
     <div className="relative">
       <div
-        className="min-h-35 w-full h-full rounded-2xl bg-no-repeat bg-cover bg-center"
+        className="min-h-80 w-full h-full rounded-2xl bg-no-repeat bg-cover bg-center"
         style={{
           backgroundImage: `url('/images/home/story4.png')`,
           clipPath: 'polygon(0 0, 60% 0, 60% 60px, 100% 60px, 100% 100%, 0 100%)',
