@@ -37,7 +37,7 @@ export default function Cta() {
             </div>
 
             <Image
-              className="absolute bottom-0 right-0"
+              className="absolute w-auto h-auto bottom-0 right-0"
               alt=""
               width={110}
               height={110}
@@ -66,7 +66,7 @@ export default function Cta() {
             </div>
 
             <Image
-              className="absolute bottom-0 right-0"
+              className="absolute w-auto h-auto bottom-0 right-0"
               alt=""
               width={110}
               height={110}

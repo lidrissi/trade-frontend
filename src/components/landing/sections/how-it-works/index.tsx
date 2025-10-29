@@ -7,7 +7,7 @@ export default function HowItWorks() {
   const [activeTab, setActiveTab] = useState<string>('buyers');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1D1B59] via-[#1D1B59] to-[#24217D] p-8 flex flex-col items-center mx-auto my-15 font-outfit bg-[url(/images/home/how-it-works/cover.png)] rounded-b-3xl">
+    <div className="min-h-screen bg-cover bg-gradient-to-br from-[#1D1B59] via-[#1D1B59] to-[#24217D] p-8 flex flex-col items-center mx-auto my-15 font-outfit bg-[url(/images/home/how-it-works/cover.png)] rounded-b-3xl">
       <div className="text-center mb-12">
         <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">How Trade.ma works ?</h1>
         <p className="text-white text-base font-light">

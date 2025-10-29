@@ -71,7 +71,7 @@ function Steps() {
           <div className="relative flex items-center">
             <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-200 -translate-y-1/2" />
             <div
-              className="absolute top-1/2 left-0 h-1 bg-blue-600 -translate-y-1/2 transition-all duration-500"
+              className="absolute top-1/2 left-0 h-1 bg-[#3553FD] -translate-y-1/2 transition-all duration-500"
               style={{
                 width: `${((currentStep + 1) / steps.length) * 100}%`,
               }}
@@ -81,7 +81,7 @@ function Steps() {
                 <div key={step.id} className="flex flex-col items-center">
                   <div
                     className={`w-6 h-6 rounded-full absolute top-1/2 -translate-y-1/2 transition-all duration-500 ${
-                      index <= currentStep ? 'bg-blue-600' : 'bg-gray-300'
+                      index <= currentStep ? 'bg-[#3553FD]' : 'bg-gray-300'
                     }`}
                   />
                 </div>
@@ -106,43 +106,62 @@ function Steps() {
       </div>
 
       <div className="md:hidden px-4">
-        {steps.map((step, index) => (
-          <div key={step.id} className="flex gap-6">
-            <div className="flex items-start">
+        <div className="flex flex-row justify-between gap-4">
+          <div className="flex flex-col justify-around">
+            {steps.map((step, index) => (
               <img
+                key={step.id}
+                className="h-12 w-12"
                 src={`/images/home/how-it-works/step${index + 1}-${currentStep >= index ? 'light' : 'dark'}.svg`}
                 alt={'step-icon'}
               />
-            </div>
-            <div className="flex flex-col relative items-center flex-shrink-0">
-              <div className="absolute top-0 bottom-0 w-1 bg-gray-200" />
-
-              <div
-                className="absolute top-0 w-1 bg-blue-600 transition-all duration-500"
-                style={{
-                  height: `${((currentStep + 1) / steps.length) * 100}%`,
-                }}
-              />
-
-              <div
-                className={`z-10 w-4 h-4 rounded-full flex items-center justify-center transition-all duration-500 ${
-                  index <= currentStep ? 'bg-blue-600 text-white' : 'bg-gray-300 text-gray-600'
-                }`}
-              ></div>
-            </div>
-
-            <div className={`pt-1 transition-all duration-500 ${index <= currentStep ? 'opacity-100' : 'opacity-50'}`}>
-              <h3
-                className={`text-xs font-bold mb-1 transition-colors duration-500 ${
-                  index <= currentStep ? 'text-blue-600' : 'text-gray-400'
-                }`}
-              >
-                {step.title}
-              </h3>
-              <p className="text-xs text-gray-600 leading-relaxed mb-3">{step.description}</p>
-            </div>
+            ))}
           </div>
-        ))}
+          <div className="flex flex-col justify-between relative">
+            {steps.map((step, index) => (
+              <div key={step.id} className="flex flex-col  items-center flex-shrink-0">
+                <div className="absolute top-0 bottom-0 w-1 bg-gray-200" />
+
+                <div
+                  className="absolute top-0 w-1 bg-[#3553FD] transition-all duration-500"
+                  style={{
+                    height: `${((currentStep + 1) / steps.length) * 100}%`,
+                  }}
+                />
+
+                <div
+                  className={`z-10 w-3 h-3 rounded-full flex items-center justify-center transition-all duration-500 ${
+                    index <= currentStep ? 'bg-[#3553FD] text-white' : 'bg-gray-300 text-gray-600'
+                  }`}
+                ></div>
+              </div>
+            ))}
+          </div>
+          <div>
+            {steps.map((step, index) => (
+              <div key={step.id} className="flex gap-6">
+                <div
+                  className={`pt-1 transition-all duration-500 ${index <= currentStep ? 'opacity-100' : 'opacity-50'}`}
+                >
+                  <h3
+                    className={`text-xs font-bold mb-1 transition-colors duration-500 ${
+                      index <= currentStep ? 'text-[#4D68A7]' : 'text-[#999999]'
+                    }`}
+                  >
+                    {step.title}
+                  </h3>
+                  <p
+                    className={`text-xs text-gray-600 leading-relaxed mb-3 ${
+                      index <= currentStep ? 'text-[#4D68A7]' : 'text-[#999999]'
+                    }`}
+                  >
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
