@@ -1,4 +1,4 @@
-const Step2Icon = ({ className = '' }) => {
+const Step2Icon = ({ active }: { active: boolean }) => {
   return (
     <svg
       width="113"
@@ -10,7 +10,7 @@ const Step2Icon = ({ className = '' }) => {
     >
       <path
         d="M96 48.5517C96 74.7567 74.5097 96 48 96C21.4903 96 0 74.7567 0 48.5517C0 22.3468 2.51359 0 29.0233 0C55.5329 0 96 22.3468 96 48.5517Z"
-        fill="#E7F7FF"
+        fill={active ? '#E8F7FF' : '#EEF2F4'}
       />
       <rect x="26" width="87" height="84" fill="url(#pattern0_6026_6)" />
       <defs>

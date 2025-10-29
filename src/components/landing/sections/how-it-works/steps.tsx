@@ -12,7 +12,7 @@ interface Step {
   id: number;
   title: string;
   description: string;
-  icon: React.ReactNode;
+  icon: React.FC<{ active: boolean }>;
 }
 
 const steps: Step[] = [
@@ -20,66 +20,63 @@ const steps: Step[] = [
     id: 1,
     title: 'Search Products',
     description: 'Quickly find the right products thanks to our simple and efficient search.',
-    icon: <Step1Icon />,
+    icon: Step1Icon,
   },
   {
     id: 2,
     title: 'Request Quotes',
     description: 'Get a personalized quote in just a few clicks to better plan your purchases.',
-    icon: <Step2Icon />,
+    icon: Step2Icon,
   },
   {
     id: 3,
     title: 'Compare & Order',
     description: 'Compare product prices and features, then order with ease.',
-    icon: <Step3Icon />,
+    icon: Step3Icon,
   },
   {
     id: 4,
     title: 'Track delivery',
     description: 'Track the progress of your order in real time until delivery.',
-    icon: <Step4Icon />,
+    icon: Step4Icon,
   },
 ];
 
 function Steps() {
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState(-1);
 
-  // Auto-play: cycle through steps every 5 seconds
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentStep((prev) => (prev + 1) % steps.length);
-  //   }, 1000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentStep((prev) => (prev === steps.length - 1 ? -1 : (prev + 1) % steps.length));
+    }, 1500);
 
-  //   return () => clearInterval(interval);
-  // }, []);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="hidden md:block">
         <div className="space-y-8">
           <div className="relative w-full flex justify-around">
-            {steps.map((step) => (
+            {steps.map((step, index) => (
               <div key={step.id} className="flex flex-col items-center">
-                {step.icon}
+                <img
+                  src={`/images/home/how-it-works/step${index + 1}-${currentStep >= index ? 'light' : 'dark'}.svg`}
+                  alt={'step-icon'}
+                  className={'h-22'}
+                />
               </div>
             ))}
           </div>
-
-          {/* Timeline Line and Circles */}
           <div className="relative flex items-center">
-            {/* Background line */}
             <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-200 -translate-y-1/2" />
-
-            {/* Active line */}
             <div
               className="absolute top-1/2 left-0 h-1 bg-blue-600 -translate-y-1/2 transition-all duration-500"
               style={{
                 width: `${((currentStep + 1) / steps.length) * 100}%`,
               }}
             />
-            {/* Step circles */}
-            <div className="relative w-full flex justify-between">
+            <div className="relative w-full flex justify-around">
               {steps.map((step, index) => (
                 <div key={step.id} className="flex flex-col items-center">
                   <div
@@ -128,7 +125,7 @@ function Steps() {
                       index <= currentStep ? 'bg-blue-600 text-white' : 'bg-gray-300 text-gray-600'
                     }`}
                   >
-                    {step.icon}
+                    <img src={'/images/home/how-it-works/step1-dark.svg'} alt={'step-icon'} className={'w-6 h-6'} />
                   </div>
                 </div>
 

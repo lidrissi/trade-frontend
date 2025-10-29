@@ -1,4 +1,4 @@
-const Step3Icon = ({ className = '' }) => {
+const Step3Icon = ({ active }: { active: boolean }) => {
   return (
     <svg
       width="94"
@@ -10,9 +10,15 @@ const Step3Icon = ({ className = '' }) => {
     >
       <path
         d="M93.385 47.2292C93.385 72.7203 72.48 93.385 46.6925 93.385C20.9049 93.385 0 72.7203 0 47.2292C0 21.738 2.44512 0 28.2327 0C54.0202 0 93.385 21.738 93.385 47.2292Z"
-        fill="#EEF2F4"
+        fill={active ? '#E8F7FF' : '#EEF2F4'}
       />
-      <rect y="0.972412" width="93.6017" height="82.4936" fill="url(#pattern0_4240_958)" fillOpacity="0.8" />
+      <rect
+        y="0.972412"
+        width="93.6017"
+        height="82.4936"
+        fill="url(#pattern0_4240_958)"
+        fillOpacity={active ? '1' : '0.8'}
+      />
       <defs>
         <pattern id="pattern0_4240_958" patternContentUnits="objectBoundingBox" width="1" height="1">
           <use xlinkHref="#image0_4240_958" transform="scale(0.0017452 0.0019802)" />

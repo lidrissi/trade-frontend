@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Steps from './steps';
 
 export default function HowItWorks() {
-  const [activeTab, setActiveTab] = useState<'buyers' | 'sellers'>('buyers');
+  const [activeTab, setActiveTab] = useState<string>('buyers');
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#1D1B59] via-[#1D1B59] to-[#24217D] p-8 flex flex-col items-center mx-auto my-15 font-outfit bg-[url(/images/home/how-it-works/cover.png)] rounded-b-3xl">
@@ -18,7 +18,7 @@ export default function HowItWorks() {
       {/* Tab Toggle */}
       <div className="flex justify-center p-8">
         <div className="inline-flex bg-[#ffffff] rounded-full p-1">
-          {['buyers', 'sellers'].map((tab) => (
+          {['buyers', 'sellers'].map((tab: string) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
