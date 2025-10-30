@@ -6,7 +6,7 @@ export default function Explore() {
       <div
         className="min-h-80 w-full h-full rounded-2xl bg-no-repeat bg-cover bg-center"
         style={{
-          backgroundImage: `url('/images/home/story4.png')`,
+          backgroundImage: `url('/images/home/stories/story4.png')`,
           clipPath: 'polygon(0 0, 60% 0, 60% 60px, 100% 60px, 100% 100%, 0 100%)',
         }}
       ></div>

@@ -9,17 +9,17 @@ export default function Hero() {
         <Image
           fill
           sizes="100vw, 100vw"
-          className="absolute h-full w-full object-cover rounded-b-3xl"
+          className="absolute h-full w-full object-cover rounded-b-5xl"
           src={'/images/home/hero.png'}
           alt="hero"
         />
       </div>
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl">
-          <h1 className="text-3xl sm:text-6xl leading-6xl font-semibold text-white mb-12 font-outfit">
+        <div className="max-w-4xl flex flex-col gap-12">
+          <h1 className="text-3xl sm:text-6xl leading-6xl font-semibold text-white font-outfit">
             The Moroccan <span className="text-cyan">B2B</span> solution to boost your exports
           </h1>
-          <div className="hidden sm:block mb-12">
+          <div className="hidden sm:block">
             <div className="flex items-center gap-3 bg-[#ffffff] rounded-full p-1.5 shadow-sm">
               <input
                 type="text"
@@ -34,6 +34,11 @@ export default function Hero() {
                 Search
               </Button>
             </div>
+          </div>
+          <div>
+            <h3 className="hidden sm:block text-xl font-medium text-white font-outfit">
+              Lorem ipsum dolor sit amet, consectetur adipiscing
+            </h3>
           </div>
           <div className="flex items-center gap-2 flex-wrap">
             <div className="flex">

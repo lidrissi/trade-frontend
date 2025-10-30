@@ -21,7 +21,7 @@ export default function Stats() {
   ];
 
   return (
-    <div className="font-quicksand bg-[#1E1B68] mb-14">
+    <div className="font-quicksand bg-[#1E1B68] mb-14 rounded-b-5xl">
       <div className="container mx-auto grid grid-cols-2 lg:grid-cols-4 justify-between p-6 sm:px-6 sm:py-20">
         {stats.map((stat, index) => (
           <div key={index} className="flex items-center">
@@ -30,7 +30,7 @@ export default function Stats() {
               alt=""
               width={110}
               height={110}
-              src={`/images/home/stats${index + 1}.png`}
+              src={`/images/home/stats/stats${index + 1}.png`}
             />
             <div className="flex flex-col">
               <h3 className="text-[#ffffff] text-xl  sm:text-5xl font-bold leading-none">{stat.value}</h3>

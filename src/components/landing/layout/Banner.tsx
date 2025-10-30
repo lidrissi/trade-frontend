@@ -10,7 +10,7 @@ export default function Banner() {
         </p>
       </div>
       <div className="flex flex-1 justify-end">
-        <button type="button" className="-m-3 p-3 focus-visible:-outline-offset-4">
+        <button type="button" className="-m-3 p-3 focus:outline-hidden">
           <span className="sr-only">Dismiss</span>
           <X aria-hidden="true" className="size-5 text-white" />
         </button>

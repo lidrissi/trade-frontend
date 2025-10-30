@@ -8,11 +8,11 @@ export default async function LandingFooter() {
   const navigationLinks = await getNavigation();
 
   return (
-    <footer className="flex flex-col font-inter mt-10">
+    <footer className="flex flex-col font-inter">
       <div className="bg-[#D4DBFF] px-6 py-12 font-satoshi">
         <div className="max-w-7xl mx-auto mt-20 flex flex-col gap-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 lg:gap-10">
-            <div className="md:col-span-1 flex flex-col gap-6 justify-center items-center sm:items-start">
+            <div className="col-span-4 lg:col-span-1 flex flex-col gap-6 justify-center items-center lg:items-start">
               <Logo />
               <p className="text-black-600 text-sm leading-relaxed text-center sm:text-left">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit Sed euismod nunc non.
@@ -32,7 +32,7 @@ export default async function LandingFooter() {
                 </button>
               </div>
             </div>
-            <div className="col-span-4 flex flex-row justify-between">
+            <div className="col-span-4 flex-row justify-between hidden lg:flex">
               {[
                 {
                   title: 'Company',
@@ -51,7 +51,7 @@ export default async function LandingFooter() {
                   items: ['Free eBooks', 'Development Tutorial', 'How to - Blog', 'Youtube Playlist'],
                 },
               ].map((item) => (
-                <div key={item.title} className="hidden sm:block font-poppins">
+                <div key={item.title} className="font-poppins">
                   <h3 className="text-[#081228] font-semibold text-base tracking-wider mb-6">{item.title}</h3>
                   <ul className="flex flex-row justify-center gap-4 sm:flex-col">
                     {item?.items.map((item) => (
@@ -71,31 +71,35 @@ export default async function LandingFooter() {
             <p className="text-[#00000099] text-xs font-inter">
               Trade © {new Date().getFullYear()}, All Rights Reserved
             </p>
+            <div className="flex md:hidden items-center flex-row gap-3">
+              <img className="h-8 rounded-sm" src="/images/home/store/app-store.png" alt="app-store" />
+              <img className="h-8 rounded-sm" src="/images/home/store/google-play.png" alt="google-play" />
+            </div>
             <div className="flex items-center flex-row  gap-3">
-              <span className="hidden sm:block text-[#081228] text-xs font-inter font-normal">
+              <span className="hidden xl:block text-[#081228] text-xs font-inter font-normal">
                 Trade on the go with the
                 <span className="font-semibold"> Trade.ma</span> app
               </span>
-              <img className="hidden sm:block h-7 rounded-sm" src="/images/home/store/app-store.png" alt="app-store" />
+              <img className="hidden md:block h-7 rounded-sm" src="/images/home/store/app-store.png" alt="app-store" />
               <img
-                className="hidden sm:block h-7 rounded-sm"
+                className="hidden md:block h-7 rounded-sm"
                 src="/images/home/store/google-play.png"
                 alt="google-play"
               />
               <div className="bg-white p-2 rounded-sm">
-                <img src="/images/payment/visa.svg" alt="Visa" className="h-3" />
-              </div>
-              <div className="bg-white p-2 rounded-sm grow-1">
-                <img src="/images/payment/mastercard.svg" alt="Mastercard" className="h-3 " />
+                <img src="/images/payment/visa.svg" alt="Visa" className="h-auto md:h-3" />
               </div>
               <div className="bg-white p-2 rounded-sm">
-                <img src="/images/payment/paypal.svg" alt="PayPal" className="h-3" />
+                <img src="/images/payment/mastercard.svg" alt="Mastercard" className="h-auto md:h-3" />
               </div>
               <div className="bg-white p-2 rounded-sm">
-                <img src="/images/payment/apple-pay.svg" alt="Apple Pay" className="h-3" />
+                <img src="/images/payment/paypal.svg" alt="PayPal" className="h-auto md:h-3" />
               </div>
               <div className="bg-white p-2 rounded-sm">
-                <img src="/images/payment/google-pay.svg" alt="Google Pay" className="h-3" />
+                <img src="/images/payment/apple-pay.svg" alt="Apple Pay" className="h-auto md:h-3" />
+              </div>
+              <div className="bg-white p-2 rounded-sm">
+                <img src="/images/payment/google-pay.svg" alt="Google Pay" className="h-auto md:h-3" />
               </div>
             </div>
             <nav className="flex sm:hidden items-center font-work-sans font-medium gap-2">

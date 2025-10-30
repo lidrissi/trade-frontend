@@ -7,7 +7,7 @@ export default function Cta() {
     <main className="container mx-auto px-6 font-outfit">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="lg:row-span-2 rounded-3xl overflow-hidden shadow-lg">
-          <div className="relative min-h-60 h-full bg-cover  bg-no-repeat bg-center flex flex-col justify-end p-8 bg-[linear-gradient(to_top,rgba(0,0,0,1)_0%,transparent_50%),url('/images/home/cta1.png')]">
+          <div className="relative min-h-60 h-full bg-cover  bg-no-repeat bg-center flex flex-col justify-end p-8 bg-[linear-gradient(to_top,rgba(0,0,0,1)_0%,transparent_50%),url('/images/home/cta/cta1.png')]">
             <div className="relative z-10">
               <h1 className="text-4xl font-bold text-white mb-4 leading-tight">Connect. Collaborate. Grow.</h1>
               <p className="text-base font-normal text-white">
@@ -41,7 +41,7 @@ export default function Cta() {
               alt=""
               width={110}
               height={110}
-              src={`/images/home/cta3.png`}
+              src={`/images/home/cta/cta3.png`}
             />
           </div>
         </div>
@@ -70,7 +70,7 @@ export default function Cta() {
               alt=""
               width={110}
               height={110}
-              src={`/images/home/cta3.png`}
+              src={`/images/home/cta/cta3.png`}
             />
           </div>
         </div>

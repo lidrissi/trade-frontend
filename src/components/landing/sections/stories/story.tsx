@@ -8,7 +8,7 @@ export default function Story({ description, image, name, verified }: any) {
         <div
           className={`bg-white w-32 h-32  flex items-center justify-center rounded-3xl bg-contain bg-no-repeat bg-center`}
           style={{
-            backgroundImage: `url('/images/home/${image}')`,
+            backgroundImage: `url('/images/home/stories/${image}')`,
           }}
         />
         <div className="flex-1 pt-4 ">

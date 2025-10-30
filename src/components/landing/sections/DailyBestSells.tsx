@@ -35,7 +35,7 @@ export default function DailyBestSells() {
             </div>
           </div>
         </nav>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <aside className="flex flex-row md:flex-col justify-between text-white bg-[#3B54DA] rounded-2xl">
             <div className="m-auto px-5 sm:px-10">
               <h1 className="text-xl sm:text-3xl font-bold">Explore a Diverse Industrial Catalogue</h1>
@@ -65,7 +65,7 @@ export default function DailyBestSells() {
             <div
               className="rounded-3xl h-65 bg-brand-light1 flex items-center justify-center relative bg-cover bg-center"
               style={{
-                backgroundImage: `url('/images/home/best-sells-1.png')`,
+                backgroundImage: `url('/images/home/best-sells/best-sells-1.png')`,
               }}
             >
               <div className="flex flex-col absolute top-4 right-4 gap-2">
@@ -105,13 +105,13 @@ export default function DailyBestSells() {
             </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-1 gap-6">
-            <div className=" bg-brand-light1 min-h-35 md:min-h-65 rounded-3xl overflow-hidden flex flex-col justify-end relative bg-no-repeat bg-cover bg-center bg-[linear-gradient(to_top,rgba(0,0,0,0.7)_0%,transparent_50%),url('/images/home/best-sells-3.png')]">
+            <div className=" bg-brand-light1 min-h-35 md:min-h-65 rounded-3xl overflow-hidden flex flex-col justify-end relative bg-no-repeat bg-cover bg-center bg-[linear-gradient(to_top,rgba(0,0,0,0.7)_0%,transparent_50%),url('/images/home/best-sells/best-sells-3.png')]">
               <div className="absolute top-6 right-6 z-10">
                 <Bookmark className="w-6 h-6 fill-[#FFB938] text-[#FFB938]" />
               </div>
               <h3 className="text-lg font-semibold text-white p-6"> Lorem ipsum dolor sit amet consectetur </h3>
             </div>
-            <div className="min-h-35 md:min-h-65 bg-brand-light1 rounded-3xl overflow-hidden flex flex-col justify-end relative bg-no-repeat bg-cover bg-cente bg-[linear-gradient(to_top,rgba(0,0,0,0.7)_0%,transparent_50%),url('/images/home/best-sells-4.png')]">
+            <div className="min-h-35 md:min-h-65 bg-brand-light1 rounded-3xl overflow-hidden flex flex-col justify-end relative bg-no-repeat bg-cover bg-cente bg-[linear-gradient(to_top,rgba(0,0,0,0.7)_0%,transparent_50%),url('/images/home/best-sells/best-sells-4.png')]">
               <div className="absolute top-6 right-6 z-10">
                 <Bookmark className="w-6 h-6 fill-[#FFB938] text-[#FFB938]" />
               </div>
@@ -122,7 +122,7 @@ export default function DailyBestSells() {
             <div
               className="rounded-3xl h-65 bg-brand-light1 flex items-center justify-center relative bg-cover bg-center"
               style={{
-                backgroundImage: `url('/images/home/best-sells-2.png')`,
+                backgroundImage: `url('/images/home/best-sells/best-sells-2.png')`,
               }}
             >
               <div className="flex flex-col absolute top-4 right-4 gap-2">
@@ -164,7 +164,7 @@ export default function DailyBestSells() {
         </div>
       </div>
       <div className="w-full h-16 bg-[#1E1B68]">
-        <div className="bg-white rounded-b-3xl h-14" />
+        <div className="bg-white rounded-b-5xl h-14" />
       </div>
     </>
   );
