@@ -7,6 +7,7 @@ import Step2Icon from './step2';
 import Step3Icon from './step3';
 import Step4Icon from './step4';
 import Step1Icon from './step1';
+import clsx from 'clsx';
 
 interface Step {
   id: number;
@@ -91,14 +92,13 @@ function Steps() {
           {/* Step titles and descriptions */}
           <div className="grid grid-cols-4 gap-4">
             {steps.map((step, index) => (
-              <div
-                key={step.id}
-                className={`text-center transition-all duration-500 ${
-                  index === currentStep ? 'opacity-100' : 'opacity-60'
-                }`}
-              >
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
+              <div key={step.id} className={`text-center transition-all duration-500 `}>
+                <h3 className={clsx('text-lg font-bold text-[#494C55] mb-2', index <= currentStep && 'text-[#40527C]')}>
+                  {step.title}
+                </h3>
+                <p className={clsx('text-xs text-[#576180] leading-relaxed', index <= currentStep && 'text-[#576180]')}>
+                  {step.description}
+                </p>
               </div>
             ))}
           </div>

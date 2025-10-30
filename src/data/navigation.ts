@@ -7,13 +7,6 @@ export async function getNavigation(): Promise<TNavigationItem[]> {
   ];
 }
 
-export async function getNavMegaMenu(): Promise<TNavigationItem> {
-  const navigation = await getNavigation();
-
-  // Find the mega menu item in the navigation array
-  return navigation[4];
-}
-
 // ============ TYPE =============
 export type TNavigationItem = Partial<{
   id: string;
