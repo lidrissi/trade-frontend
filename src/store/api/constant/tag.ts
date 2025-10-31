@@ -1,3 +1,3 @@
 export const tag = {
-  users: 'Users',
+  users: "Users",
 };

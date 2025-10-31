@@ -1,5 +1,5 @@
-import { NextIntlClientProvider } from 'next-intl';
-import { notFound } from 'next/navigation';
+import { NextIntlClientProvider } from "next-intl";
+import { notFound } from "next/navigation";
 
 interface I18nProviderProps {
   children: React.ReactNode;

@@ -1,10 +1,15 @@
-'use client';
+"use client";
 
-import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
-import clsx from 'clsx';
-import { X } from 'lucide-react';
-import { createContext, useContext, useState, type ReactNode } from 'react';
-import Logo from '../Logo';
+import {
+  Dialog,
+  DialogBackdrop,
+  DialogPanel,
+  DialogTitle,
+} from "@headlessui/react";
+import clsx from "clsx";
+import { X } from "lucide-react";
+import { createContext, useContext, useState, type ReactNode } from "react";
+import Logo from "../Logo";
 
 /**
  * Drawer component that opens on user click.
@@ -17,15 +22,15 @@ import Logo from '../Logo';
 export function Aside({
   heading,
   logoOnHeading = false,
-  openFrom = 'right',
+  openFrom = "right",
   children,
   type,
-  contentMaxWidthClassName = 'max-w-lg',
+  contentMaxWidthClassName = "max-w-lg",
   showHeading = true,
 }: {
   heading?: string;
   logoOnHeading?: boolean;
-  openFrom: 'right' | 'left';
+  openFrom: "right" | "left";
   children: React.ReactNode;
   type: AsideType;
   contentMaxWidthClassName?: string;
@@ -47,35 +52,48 @@ export function Aside({
 
       <div className="fixed inset-0">
         <div className="absolute inset-0 overflow-hidden">
-          <div className={clsx('fixed inset-y-0 flex max-w-full', openFrom === 'right' && 'right-0')}>
+          <div
+            className={clsx(
+              "fixed inset-y-0 flex max-w-full",
+              openFrom === "right" && "right-0",
+            )}
+          >
             <DialogPanel
               transition
               className={clsx(
                 contentMaxWidthClassName,
-                'h-screen w-screen translate-x-0 overflow-hidden bg-white text-start align-middle shadow-xl transition duration-200 ease-in-out dark:bg-neutral-800',
-                openFrom === 'left' && 'data-closed:-translate-x-20 data-closed:opacity-0',
-                openFrom === 'right' && 'data-closed:translate-x-20 data-closed:opacity-0'
+                "h-screen w-screen translate-x-0 overflow-hidden bg-white text-start align-middle shadow-xl transition duration-200 ease-in-out dark:bg-neutral-800",
+                openFrom === "left" &&
+                  "data-closed:-translate-x-20 data-closed:opacity-0",
+                openFrom === "right" &&
+                  "data-closed:translate-x-20 data-closed:opacity-0",
               )}
             >
               <div className="flex h-full flex-col px-4 md:px-8">
                 {showHeading ? (
                   <header
                     className={`flex h-16 flex-shrink-0 items-center border-b border-neutral-900/10 md:h-20 ${
-                      hasHeading ? 'justify-between' : 'justify-end'
+                      hasHeading ? "justify-between" : "justify-end"
                     }`}
                   >
                     {hasHeading && (
                       <>
                         {!!heading && !logoOnHeading && (
                           <DialogTitle>
-                            <span className="text-2xl font-medium">{heading}</span>
+                            <span className="text-2xl font-medium">
+                              {heading}
+                            </span>
                           </DialogTitle>
                         )}
                         {logoOnHeading && <Logo />}
                       </>
                     )}
 
-                    <button type="button" className="group -m-4 cursor-pointer p-4" onClick={onClose}>
+                    <button
+                      type="button"
+                      className="group -m-4 cursor-pointer p-4"
+                      onClick={onClose}
+                    >
                       <X
                         className="transition-transform duration-200 group-hover:rotate-90"
                         size={24}
@@ -115,7 +133,13 @@ export function useDrawer(openDefault = false) {
   };
 }
 
-type AsideType = 'search' | 'cart' | 'closed' | 'sidebar-navigation' | 'category-filters' | 'product-quick-view';
+type AsideType =
+  | "search"
+  | "cart"
+  | "closed"
+  | "sidebar-navigation"
+  | "category-filters"
+  | "product-quick-view";
 type AsideContextValue = {
   type: AsideType;
   open: (mode: AsideType) => void;
@@ -127,15 +151,16 @@ type AsideContextValue = {
 const AsideContext = createContext<AsideContextValue | null>(null);
 
 export function AsideProvider({ children }: { children: ReactNode }) {
-  const [type, setType] = useState<AsideType>('closed');
-  const [productQuickViewHandle, setProductQuickViewHandle] = useState<string>();
+  const [type, setType] = useState<AsideType>("closed");
+  const [productQuickViewHandle, setProductQuickViewHandle] =
+    useState<string>();
 
   return (
     <AsideContext.Provider
       value={{
         type,
         open: setType,
-        close: () => setType('closed'),
+        close: () => setType("closed"),
         productQuickViewHandle,
         setProductQuickViewHandle,
       }}
@@ -148,7 +173,7 @@ export function AsideProvider({ children }: { children: ReactNode }) {
 export function useAside() {
   const aside = useContext(AsideContext);
   if (!aside) {
-    throw new Error('useAside must be used within an AsideProvider');
+    throw new Error("useAside must be used within an AsideProvider");
   }
   return aside;
 }

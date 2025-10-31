@@ -1,6 +1,6 @@
 // import storage from 'redux-persist/lib/storage';
-import { userApi } from './api/user';
-import cartReducer from './features/cart-slice';
+import { userApi } from "./api/user";
+import cartReducer from "./features/cart-slice";
 
 // const persistConfig = {
 //   key: 'root',

@@ -1,10 +1,16 @@
-import { ReduxProvider } from './ReduxProvider';
-import { I18nProvider } from './I18nProvider';
-import { AbilityProvider } from './AbilityProvider';
-import { SessionProvider } from 'next-auth/react';
-import Aside from '@/components/aside';
+import { ReduxProvider } from "./ReduxProvider";
+import { I18nProvider } from "./I18nProvider";
+import { AbilityProvider } from "./AbilityProvider";
+import { SessionProvider } from "next-auth/react";
+import Aside from "@/components/aside";
 
-export function AppProviders({ children, locale }: { children: React.ReactNode; locale: string }) {
+export function AppProviders({
+  children,
+  locale,
+}: {
+  children: React.ReactNode;
+  locale: string;
+}) {
   return (
     <SessionProvider>
       <ReduxProvider>

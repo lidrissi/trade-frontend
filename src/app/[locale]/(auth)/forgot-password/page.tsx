@@ -1,20 +1,20 @@
-import ButtonPrimary from '@/shared/Button/ButtonPrimary'
-import { Field, FieldGroup, Fieldset, Label } from '@/shared/fieldset'
-import { Input } from '@/shared/input'
-import Form from 'next/form'
-import Link from 'next/link'
+import ButtonPrimary from "@/shared/Button/ButtonPrimary";
+import { Field, FieldGroup, Fieldset, Label } from "@/shared/fieldset";
+import { Input } from "@/shared/input";
+import Form from "next/form";
+import Link from "next/link";
 
 export const metadata = {
-  title: 'Forgot Password',
-  description: 'Forgot password page for the application',
-}
+  title: "Forgot Password",
+  description: "Forgot password page for the application",
+};
 
 const PageForgotPass = () => {
   const handleSubmit = async (formData: FormData) => {
-    'use server'
-    const formObject = Object.fromEntries(formData.entries())
-    console.log(formObject)
-  }
+    "use server";
+    const formObject = Object.fromEntries(formData.entries());
+    console.log(formObject);
+  };
 
   return (
     <div className="container mb-24 lg:mb-32">
@@ -34,7 +34,11 @@ const PageForgotPass = () => {
             <FieldGroup>
               <Field>
                 <Label>Email address</Label>
-                <Input type="email" name="email" placeholder="example@example.com" />
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="example@example.com"
+                />
               </Field>
               <ButtonPrimary className="w-full" type="submit">
                 Continue
@@ -49,14 +53,16 @@ const PageForgotPass = () => {
           <Link href="/login" className="text-primary-600 underline">
             Sign in
           </Link>
-          <span className="mx-1.5 text-neutral-300 dark:text-neutral-700">/</span>
+          <span className="mx-1.5 text-neutral-300 dark:text-neutral-700">
+            /
+          </span>
           <Link href="/signup" className="text-primary-600 underline">
             Sign up
           </Link>
         </span>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PageForgotPass
+export default PageForgotPass;

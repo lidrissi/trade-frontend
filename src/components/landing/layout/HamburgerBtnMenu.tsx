@@ -1,4 +1,4 @@
-import { MenuIcon } from 'lucide-react';
+import { MenuIcon } from "lucide-react";
 
 const HamburgerBtnMenu = () => {
   return (

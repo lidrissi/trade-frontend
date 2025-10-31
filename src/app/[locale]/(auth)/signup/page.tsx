@@ -1,43 +1,43 @@
-import facebookSvg from '@/images/socials/facebook-2.svg'
-import googleSvg from '@/images/socials/google.svg'
-import twitterSvg from '@/images/socials/twitter.svg'
-import ButtonPrimary from '@/shared/Button/ButtonPrimary'
-import { Field, FieldGroup, Fieldset, Label } from '@/shared/fieldset'
-import { Input } from '@/shared/input'
-import { Metadata } from 'next'
-import Form from 'next/form'
-import Image from 'next/image'
-import Link from 'next/link'
+import facebookSvg from "@/images/socials/facebook-2.svg";
+import googleSvg from "@/images/socials/google.svg";
+import twitterSvg from "@/images/socials/twitter.svg";
+import ButtonPrimary from "@/shared/Button/ButtonPrimary";
+import { Field, FieldGroup, Fieldset, Label } from "@/shared/fieldset";
+import { Input } from "@/shared/input";
+import { Metadata } from "next";
+import Form from "next/form";
+import Image from "next/image";
+import Link from "next/link";
 
 const loginSocials = [
   {
-    name: 'Continue with Facebook',
-    href: '#',
+    name: "Continue with Facebook",
+    href: "#",
     icon: facebookSvg,
   },
   {
-    name: 'Continue with Twitter',
-    href: '#',
+    name: "Continue with Twitter",
+    href: "#",
     icon: twitterSvg,
   },
   {
-    name: 'Continue with Google',
-    href: '#',
+    name: "Continue with Google",
+    href: "#",
     icon: googleSvg,
   },
-]
+];
 
 export const metadata: Metadata = {
-  title: 'Signup',
-  description: 'Signup page for the application',
-}
+  title: "Signup",
+  description: "Signup page for the application",
+};
 
 const PageSignUp = () => {
   const handleSubmit = async (formData: FormData) => {
-    'use server'
-    const formObject = Object.fromEntries(formData.entries())
-    console.log(formObject)
-  }
+    "use server";
+    const formObject = Object.fromEntries(formData.entries());
+    console.log(formObject);
+  };
 
   return (
     <div className="container mb-24 lg:mb-32">
@@ -50,9 +50,14 @@ const PageSignUp = () => {
             <a
               key={index}
               href={item.href}
-              className="flex w-full transform rounded-lg bg-primary-50 px-4 py-3 transition-transform hover:translate-y-[-2px] sm:px-6 dark:bg-neutral-800"
+              className="bg-primary-50 flex w-full transform rounded-lg px-4 py-3 transition-transform hover:translate-y-[-2px] sm:px-6 dark:bg-neutral-800"
             >
-              <Image sizes="40px" className="size-5 shrink-0 object-cover" src={item.icon} alt={item.name} />
+              <Image
+                sizes="40px"
+                className="size-5 shrink-0 object-cover"
+                src={item.icon}
+                alt={item.name}
+              />
               <h3 className="grow text-center text-sm font-medium text-neutral-700 sm:text-sm dark:text-neutral-300">
                 {item.name}
               </h3>
@@ -72,7 +77,11 @@ const PageSignUp = () => {
             <FieldGroup className="sm:space-y-6">
               <Field>
                 <Label>Email</Label>
-                <Input type="email" name="email" placeholder="example@example.com" />
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="example@example.com"
+                />
               </Field>
               <Field>
                 <Label>Password</Label>
@@ -95,7 +104,7 @@ const PageSignUp = () => {
         </span>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PageSignUp
+export default PageSignUp;

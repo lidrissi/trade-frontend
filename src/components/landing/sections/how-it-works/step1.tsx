@@ -9,12 +9,27 @@ const Step1Icon = ({ active }: { active: boolean }) => {
     >
       <path
         d="M96 48.5517C96 74.7567 74.5097 96 48 96C21.4903 96 0 74.7567 0 48.5517C0 22.3468 2.51359 0 29.0233 0C55.5329 0 96 22.3468 96 48.5517Z"
-        fill={active ? '#E8F7FF' : '#EEF2F4'}
+        fill={active ? "#E8F7FF" : "#EEF2F4"}
       />
-      <rect x="2" y="9" width="110" height="87" fill="url(#pattern0_6026_5)" fillOpacity={0.8} />
+      <rect
+        x="2"
+        y="9"
+        width="110"
+        height="87"
+        fill="url(#pattern0_6026_5)"
+        fillOpacity={0.8}
+      />
       <defs>
-        <pattern id="pattern0_6026_5" patternContentUnits="objectBoundingBox" width="1" height="1">
-          <use xlinkHref="#image0_6026_5" transform="matrix(0.00163749 0 0 0.00207039 -0.00189159 0)" />
+        <pattern
+          id="pattern0_6026_5"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+          height="1"
+        >
+          <use
+            xlinkHref="#image0_6026_5"
+            transform="matrix(0.00163749 0 0 0.00207039 -0.00189159 0)"
+          />
         </pattern>
         <image
           id="image0_6026_5"

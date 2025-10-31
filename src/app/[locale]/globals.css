@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -9,7 +9,7 @@
   --font-work-sans: var(--font-work-sans);
   --font-quicksand: var(--font-quicksand);
   --font-poppins: var(--font-poppins);
-  --font-satoshi: 'Satoshi', sans-serif;
+  --font-satoshi: "Satoshi", sans-serif;
   --font-sans: var(--font-inter);
   --color-brand: #6d8dff;
   --color-brand-light: #839dfc;
@@ -55,15 +55,15 @@
 }
 
 @font-face {
-  font-family: 'Satoshi';
-  src: url('./fonts/Satoshi-Variable.woff2') format('woff2');
+  font-family: "Satoshi";
+  src: url("./fonts/Satoshi-Variable.woff2") format("woff2");
   font-weight: 300 900;
   font-style: normal;
   font-display: swap;
 }
 
 :root {
-  --font-satoshi: 'Satoshi', sans-serif;
+  --font-satoshi: "Satoshi", sans-serif;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

@@ -1,10 +1,9 @@
-// middleware.ts
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
-import createMiddleware from 'next-intl/middleware';
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+import createMiddleware from "next-intl/middleware";
 
-const locales = ['en', 'ar'];
-const defaultLocale = 'en';
+const locales = ["en", "ar"];
+const defaultLocale = "en";
 
 const intlMiddleware = createMiddleware({
   locales,
@@ -14,7 +13,7 @@ const intlMiddleware = createMiddleware({
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  if (pathname === '/') {
+  if (pathname === "/") {
     const url = request.nextUrl.clone();
     url.pathname = `/${defaultLocale}`;
     return NextResponse.redirect(url);
@@ -24,5 +23,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!api|_next|.*\\..*).*)'],
+  matcher: ["/((?!api|_next|.*\\..*).*)"],
 };

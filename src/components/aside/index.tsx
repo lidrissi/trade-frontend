@@ -1,4 +1,4 @@
-import { Aside as AsideComponent, AsideProvider, useAside } from './aside';
+import { Aside as AsideComponent, AsideProvider, useAside } from "./aside";
 
 type AsideType = {
   Provider: typeof AsideProvider;

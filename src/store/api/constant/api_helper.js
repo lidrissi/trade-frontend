@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 export const API_URL = `/api/v1`;
 export const axiosApi = axios.create({
@@ -7,37 +7,45 @@ export const axiosApi = axios.create({
 
 axiosApi.interceptors.response.use(
   (response) => response,
-  (error) => Promise.reject(error)
+  (error) => Promise.reject(error),
 );
 
 axiosApi.interceptors.request.use(
   async (config) => {
-    const token = ''; //TO BE DEFINED
+    const token = ""; //TO BE DEFINED
     config.headers = {
-      Authorization: `Bearer ${token ? token : ''}`,
-      Accept: 'application/json',
+      Authorization: `Bearer ${token ? token : ""}`,
+      Accept: "application/json",
     };
     return config;
   },
   (error) => {
     Promise.reject(error);
-  }
+  },
 );
 
 export async function get(url, config = {}) {
-  return await axiosApi.get(url, { ...config }).then((response) => response.data);
+  return await axiosApi
+    .get(url, { ...config })
+    .then((response) => response.data);
 }
 
 export async function post(url, data, config = {}) {
-  return axiosApi.post(url, { ...data }, { ...config }).then((response) => response.data);
+  return axiosApi
+    .post(url, { ...data }, { ...config })
+    .then((response) => response.data);
 }
 
 export async function put(url, data, config = {}) {
-  return axiosApi.put(url, { ...data }, { ...config }).then((response) => response.data);
+  return axiosApi
+    .put(url, { ...data }, { ...config })
+    .then((response) => response.data);
 }
 
 export async function patch(url, data, config = {}) {
-  return axiosApi.patch(url, { ...data }, { ...config }).then((response) => response.data);
+  return axiosApi
+    .patch(url, { ...data }, { ...config })
+    .then((response) => response.data);
 }
 
 export async function del(url, data = {}) {

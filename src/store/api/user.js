@@ -1,9 +1,9 @@
-import { createApi } from '@reduxjs/toolkit/query/react';
-import { tag } from './constant/tag';
-import { customFetchBaseQuery, urls } from './constant/url_helper';
+import { createApi } from "@reduxjs/toolkit/query/react";
+import { tag } from "./constant/tag";
+import { customFetchBaseQuery, urls } from "./constant/url_helper";
 
 export const userApi = createApi({
-  reducerPath: 'userApi',
+  reducerPath: "userApi",
   baseQuery: customFetchBaseQuery(),
   tagTypes: [tag.users],
   endpoints: (builder) => ({
@@ -28,7 +28,7 @@ export const userApi = createApi({
     addUser: builder.mutation({
       query: (newUser) => ({
         url: urls.user.create,
-        method: 'POST',
+        method: "POST",
         body: newUser,
       }),
       invalidatesTags: [tag.users],
@@ -36,7 +36,7 @@ export const userApi = createApi({
     updateUser: builder.mutation({
       query: (updatedUser) => ({
         url: urls.user.update,
-        method: 'PATCH',
+        method: "PATCH",
         body: updatedUser,
       }),
       invalidatesTags: [tag.users],
@@ -44,7 +44,7 @@ export const userApi = createApi({
     deleteUser: builder.mutation({
       query: (body) => ({
         url: urls.user.delete,
-        method: 'DELETE',
+        method: "DELETE",
         body,
       }),
       invalidatesTags: [tag.users],
@@ -52,7 +52,7 @@ export const userApi = createApi({
     changeUserPassword: builder.mutation({
       query: (body) => ({
         url: urls.user.changePassword,
-        method: 'PATCH',
+        method: "PATCH",
         body,
       }),
       invalidatesTags: [tag.users],

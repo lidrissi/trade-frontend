@@ -13,8 +13,12 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx,md,html,css,json}": [
-      "prettier --write --ignore-unknown"
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "**/*.{md,html,css,json}": [
+      "prettier --write"
     ]
   },
   "dependencies": {

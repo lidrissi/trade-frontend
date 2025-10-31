@@ -1,62 +1,78 @@
-import Logo from '@/components/Logo';
-import { getNavigation } from '@/data/navigation';
-import { Twitter, Facebook, Instagram, Github } from 'lucide-react';
-import Link from 'next/link';
-import { Fragment } from 'react';
+import Logo from "@/components/Logo";
+import { getNavigation } from "@/data/navigation";
+import { Twitter, Facebook, Instagram, Github } from "lucide-react";
+import Link from "next/link";
+import { Fragment } from "react";
 
 export default async function LandingFooter() {
   const navigationLinks = await getNavigation();
 
   return (
-    <footer className="flex flex-col font-inter">
-      <div className="bg-[#D4DBFF] px-6 py-12 font-satoshi">
-        <div className="max-w-7xl mx-auto mt-20 flex flex-col gap-8">
+    <footer className="font-inter flex flex-col">
+      <div className="font-satoshi bg-[#D4DBFF] px-6 py-12">
+        <div className="mx-auto mt-20 flex max-w-7xl flex-col gap-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 lg:gap-10">
-            <div className="col-span-4 lg:col-span-1 flex flex-col gap-6 justify-center items-center lg:items-start">
+            <div className="col-span-4 flex flex-col items-center justify-center gap-6 lg:col-span-1 lg:items-start">
               <Logo />
-              <p className="text-black-600 text-sm leading-relaxed text-center sm:text-left">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit Sed euismod nunc non.
+              <p className="text-black-600 text-center text-sm leading-relaxed sm:text-left">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit Sed
+                euismod nunc non.
               </p>
               <div className="flex gap-3">
-                <button className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-[#f0f0f0] transition-colors">
-                  <Twitter className="w-4 h-4 text-black" />
+                <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white transition-colors hover:bg-[#f0f0f0]">
+                  <Twitter className="h-4 w-4 text-black" />
                 </button>
-                <button className="w-10 h-10 rounded-full bg-black flex items-center justify-center hover:bg-[#262b2f] transition-colors">
-                  <Facebook className="w-4 h-4 text-white" />
+                <button className="flex h-10 w-10 items-center justify-center rounded-full bg-black transition-colors hover:bg-[#262b2f]">
+                  <Facebook className="h-4 w-4 text-white" />
                 </button>
-                <button className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-[#f0f0f0] transition-colors">
-                  <Instagram className="w-4 h-4 text-black" />
+                <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white transition-colors hover:bg-[#f0f0f0]">
+                  <Instagram className="h-4 w-4 text-black" />
                 </button>
-                <button className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-[#f0f0f0] transition-colors">
-                  <Github className="w-4 h-4 text-black" />
+                <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white transition-colors hover:bg-[#f0f0f0]">
+                  <Github className="h-4 w-4 text-black" />
                 </button>
               </div>
             </div>
-            <div className="col-span-4 flex-row justify-between hidden lg:flex">
+            <div className="col-span-4 hidden flex-row justify-between lg:flex">
               {[
                 {
-                  title: 'Company',
-                  items: ['About', 'Features', 'Works', 'Career'],
+                  title: "Company",
+                  items: ["About", "Features", "Works", "Career"],
                 },
                 {
-                  title: 'Help',
-                  items: ['Customer Support', 'Delivery Details', 'Terms & Conditions', 'Privacy Policy'],
+                  title: "Help",
+                  items: [
+                    "Customer Support",
+                    "Delivery Details",
+                    "Terms & Conditions",
+                    "Privacy Policy",
+                  ],
                 },
                 {
-                  title: 'FAQ',
-                  items: ['Account', 'Manage Deliveries', 'Orders', 'Payments'],
+                  title: "FAQ",
+                  items: ["Account", "Manage Deliveries", "Orders", "Payments"],
                 },
                 {
-                  title: 'Resources',
-                  items: ['Free eBooks', 'Development Tutorial', 'How to - Blog', 'Youtube Playlist'],
+                  title: "Resources",
+                  items: [
+                    "Free eBooks",
+                    "Development Tutorial",
+                    "How to - Blog",
+                    "Youtube Playlist",
+                  ],
                 },
               ].map((item) => (
                 <div key={item.title} className="font-poppins">
-                  <h3 className="text-[#081228] font-semibold text-base tracking-wider mb-6">{item.title}</h3>
+                  <h3 className="mb-6 text-base font-semibold tracking-wider text-[#081228]">
+                    {item.title}
+                  </h3>
                   <ul className="flex flex-row justify-center gap-4 sm:flex-col">
                     {item?.items.map((item) => (
                       <li key={item}>
-                        <a href="#" className="text-[#081228] text-base transition-colors font-light">
+                        <a
+                          href="#"
+                          className="text-base font-light text-[#081228] transition-colors"
+                        >
                           {item}
                         </a>
                       </li>
@@ -66,52 +82,86 @@ export default async function LandingFooter() {
               ))}
             </div>
           </div>
-          <div className="hidden md:block h-[1px] w-full bg-[#0000001A]" />
-          <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-6">
-            <p className="text-[#00000099] text-xs font-inter">
+          <div className="hidden h-[1px] w-full bg-[#0000001A] md:block" />
+          <div className="flex flex-col-reverse items-center justify-between gap-6 md:flex-row">
+            <p className="font-inter text-xs text-[#00000099]">
               Trade © {new Date().getFullYear()}, All Rights Reserved
             </p>
-            <div className="flex md:hidden items-center flex-row gap-3">
-              <img className="h-8 rounded-sm" src="/images/home/store/app-store.png" alt="app-store" />
-              <img className="h-8 rounded-sm" src="/images/home/store/google-play.png" alt="google-play" />
-            </div>
-            <div className="flex items-center flex-row  gap-3">
-              <span className="hidden xl:block text-[#081228] text-xs font-inter font-normal">
-                Trade on the go with the
-                <span className="font-semibold"> Trade.ma</span> app
-              </span>
-              <img className="hidden md:block h-7 rounded-sm" src="/images/home/store/app-store.png" alt="app-store" />
+            <div className="flex flex-row items-center gap-3 md:hidden">
               <img
-                className="hidden md:block h-7 rounded-sm"
+                className="h-8 rounded-sm"
+                src="/images/home/store/app-store.png"
+                alt="app-store"
+              />
+              <img
+                className="h-8 rounded-sm"
                 src="/images/home/store/google-play.png"
                 alt="google-play"
               />
-              <div className="bg-white p-2 rounded-sm">
-                <img src="/images/payment/visa.svg" alt="Visa" className="h-auto md:h-3" />
+            </div>
+            <div className="flex flex-row items-center gap-3">
+              <span className="font-inter hidden text-xs font-normal text-[#081228] xl:block">
+                Trade on the go with the
+                <span className="font-semibold"> Trade.ma</span> app
+              </span>
+              <img
+                className="hidden h-7 rounded-sm md:block"
+                src="/images/home/store/app-store.png"
+                alt="app-store"
+              />
+              <img
+                className="hidden h-7 rounded-sm md:block"
+                src="/images/home/store/google-play.png"
+                alt="google-play"
+              />
+              <div className="rounded-sm bg-white p-2">
+                <img
+                  src="/images/payment/visa.svg"
+                  alt="Visa"
+                  className="h-auto md:h-3"
+                />
               </div>
-              <div className="bg-white p-2 rounded-sm">
-                <img src="/images/payment/mastercard.svg" alt="Mastercard" className="h-auto md:h-3" />
+              <div className="rounded-sm bg-white p-2">
+                <img
+                  src="/images/payment/mastercard.svg"
+                  alt="Mastercard"
+                  className="h-auto md:h-3"
+                />
               </div>
-              <div className="bg-white p-2 rounded-sm">
-                <img src="/images/payment/paypal.svg" alt="PayPal" className="h-auto md:h-3" />
+              <div className="rounded-sm bg-white p-2">
+                <img
+                  src="/images/payment/paypal.svg"
+                  alt="PayPal"
+                  className="h-auto md:h-3"
+                />
               </div>
-              <div className="bg-white p-2 rounded-sm">
-                <img src="/images/payment/apple-pay.svg" alt="Apple Pay" className="h-auto md:h-3" />
+              <div className="rounded-sm bg-white p-2">
+                <img
+                  src="/images/payment/apple-pay.svg"
+                  alt="Apple Pay"
+                  className="h-auto md:h-3"
+                />
               </div>
-              <div className="bg-white p-2 rounded-sm">
-                <img src="/images/payment/google-pay.svg" alt="Google Pay" className="h-auto md:h-3" />
+              <div className="rounded-sm bg-white p-2">
+                <img
+                  src="/images/payment/google-pay.svg"
+                  alt="Google Pay"
+                  className="h-auto md:h-3"
+                />
               </div>
             </div>
-            <nav className="flex sm:hidden items-center font-work-sans font-medium gap-2">
+            <nav className="font-work-sans flex items-center gap-2 font-medium sm:hidden">
               {navigationLinks.map(({ id, name, href }, index) => (
                 <Fragment key={id}>
                   <Link
-                    href={href || '#'}
-                    className="hover:opacity-70 text-xs transition-opacity duration-200 font-medium font-roboto"
+                    href={href || "#"}
+                    className="font-roboto text-xs font-medium transition-opacity duration-200 hover:opacity-70"
                   >
                     {name}
                   </Link>
-                  {navigationLinks?.length - 1 !== index && <span className="">|</span>}
+                  {navigationLinks?.length - 1 !== index && (
+                    <span className="">|</span>
+                  )}
                 </Fragment>
               ))}
             </nav>
