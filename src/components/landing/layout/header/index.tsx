@@ -8,10 +8,6 @@ import { Navigation } from "../Navigation";
 import Logo from "@/components/Logo";
 
 export default function Header() {
-  function classNames(...classes: string[]): string {
-    return classes.filter(Boolean).join(" ");
-  }
-
   return (
     <div className="h-full">
       <Disclosure as="nav" className="h-full">

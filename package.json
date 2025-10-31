@@ -13,18 +13,17 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "**/*.{md,html,css,json}": [
-      "prettier --write"
+    "**/*.{js,jsx,ts,tsx,md,html,css,json}": [
+      "prettier --write --ignore-unknown"
     ]
   },
   "dependencies": {
     "@casl/ability": "^6.7.3",
     "@casl/react": "^5.0.0",
     "@headlessui/react": "^2.2.9",
+    "@hookform/resolvers": "^5.2.2",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-separator": "^1.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@reduxjs/toolkit": "^2.9.0",
     "axios": "^1.12.2",

@@ -1,29 +1,27 @@
-import facebookSvg from "@/images/socials/facebook-2.svg";
-import googleSvg from "@/images/socials/google.svg";
-import twitterSvg from "@/images/socials/twitter.svg";
-import ButtonPrimary from "@/shared/Button/ButtonPrimary";
-import { Field, FieldGroup, Fieldset, Label } from "@/shared/fieldset";
-import { Input } from "@/shared/input";
+import { Button } from "@/components/ui/button";
+import { Field, FieldGroup, FieldSet, FieldLabel } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
 import { Metadata } from "next";
 import Form from "next/form";
 import Image from "next/image";
 import Link from "next/link";
+import { Facebook, Linkedin, Twitter } from "lucide-react";
 
 const loginSocials = [
   {
     name: "Continue with Facebook",
     href: "#",
-    icon: facebookSvg,
+    icon: Facebook,
   },
   {
     name: "Continue with Twitter",
     href: "#",
-    icon: twitterSvg,
+    icon: Twitter,
   },
   {
     name: "Continue with Google",
     href: "#",
-    icon: googleSvg,
+    icon: Linkedin,
   },
 ];
 
@@ -40,8 +38,8 @@ const PageSignUp = () => {
   };
 
   return (
-    <div className="container mb-24 lg:mb-32">
-      <h1 className="my-20 flex items-center justify-center text-3xl leading-[115%] font-semibold text-neutral-900 md:text-5xl md:leading-[115%] dark:text-neutral-100">
+    <div className="container">
+      <h1 className="my-10 flex items-center justify-center text-3xl leading-[115%] font-semibold text-neutral-900 md:text-5xl md:leading-[115%] dark:text-neutral-100">
         Sign up
       </h1>
       <div className="mx-auto max-w-md space-y-6">
@@ -50,15 +48,10 @@ const PageSignUp = () => {
             <a
               key={index}
               href={item.href}
-              className="bg-primary-50 flex w-full transform rounded-lg px-4 py-3 transition-transform hover:translate-y-[-2px] sm:px-6 dark:bg-neutral-800"
+              className="bg-brand flex w-full transform rounded-lg px-4 py-3 text-white transition-transform hover:translate-y-[-2px] sm:px-6 dark:bg-neutral-800"
             >
-              <Image
-                sizes="40px"
-                className="size-5 shrink-0 object-cover"
-                src={item.icon}
-                alt={item.name}
-              />
-              <h3 className="grow text-center text-sm font-medium text-neutral-700 sm:text-sm dark:text-neutral-300">
+              {<item.icon />}
+              <h3 className="grow text-center text-sm font-medium text-white sm:text-sm dark:text-neutral-300">
                 {item.name}
               </h3>
             </a>
@@ -73,10 +66,10 @@ const PageSignUp = () => {
         </div>
         {/* FORM */}
         <Form action={handleSubmit}>
-          <Fieldset>
+          <FieldSet>
             <FieldGroup className="sm:space-y-6">
               <Field>
-                <Label>Email</Label>
+                <FieldLabel>Email</FieldLabel>
                 <Input
                   type="email"
                   name="email"
@@ -84,15 +77,15 @@ const PageSignUp = () => {
                 />
               </Field>
               <Field>
-                <Label>Password</Label>
+                <FieldLabel>Password</FieldLabel>
                 <Input type="password" name="password" />
               </Field>
 
-              <ButtonPrimary className="mt-2 w-full" type="submit">
+              <Button className="mt-2 w-full" type="submit">
                 Continue
-              </ButtonPrimary>
+              </Button>
             </FieldGroup>
-          </Fieldset>
+          </FieldSet>
         </Form>
 
         {/* ==== */}

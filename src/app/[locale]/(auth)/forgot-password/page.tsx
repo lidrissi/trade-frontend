@@ -1,6 +1,6 @@
-import ButtonPrimary from "@/shared/Button/ButtonPrimary";
-import { Field, FieldGroup, Fieldset, Label } from "@/shared/fieldset";
-import { Input } from "@/shared/input";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Field, FieldGroup, FieldSet, FieldLabel } from "@/components/ui/field";
 import Form from "next/form";
 import Link from "next/link";
 
@@ -30,21 +30,21 @@ const PageForgotPass = () => {
       <div className="mx-auto max-w-md space-y-6">
         {/* FORM */}
         <Form action={handleSubmit}>
-          <Fieldset>
+          <FieldSet>
             <FieldGroup>
               <Field>
-                <Label>Email address</Label>
+                <FieldLabel>Email address</FieldLabel>
                 <Input
                   type="email"
                   name="email"
                   placeholder="example@example.com"
                 />
               </Field>
-              <ButtonPrimary className="w-full" type="submit">
+              <Button className="w-full" type="submit">
                 Continue
-              </ButtonPrimary>
+              </Button>
             </FieldGroup>
-          </Fieldset>
+          </FieldSet>
         </Form>
 
         {/* ==== */}
