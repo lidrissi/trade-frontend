@@ -1,5 +1,3 @@
-import { fetchBaseQuery } from "@reduxjs/toolkit/query";
-
 export const urls = {
   auth: {
     login: { url: "/auth/login", method: "POST" },
@@ -22,9 +20,12 @@ export const urls = {
     updateVisibility: { url: "/users/profile/visibility", method: "PUT" },
     create: { url: "/users", method: "POST" },
     list: { url: "/users", method: "GET" },
-    find: { url: "/users/{userId}", method: "GET" },
-    update: { url: "/users/{userId}", method: "PUT" },
-    delete: { url: "/users/{userId}", method: "DELETE" },
+    find: (userId) => ({ url: `/users/${userId}`, method: "GET" }),
+    update: (userId) => ({
+      url: `/users/${userId}`,
+      method: "PUT",
+    }),
+    delete: (userId) => ({ url: `/users/${userId}`, method: "DELETE" }),
   },
   role: {
     create: { url: "/roles", method: "POST" },
@@ -238,16 +239,4 @@ export const urls = {
     get: { url: "/media/{id}", method: "GET" },
     delete: { url: "/media/{id}", method: "DELETE" },
   },
-};
-
-export const customFetchBaseQuery = () => {
-  return fetchBaseQuery({
-    baseUrl: `${process.env.NEXT_PUBLIC_API_URL}/api/v1`,
-    prepareHeaders: (headers, {}) => {
-      const token = "";
-      headers.set("Authorization", `Bearer ${token}`);
-      headers.set("Accept", "application/json");
-      return headers;
-    },
-  });
 };

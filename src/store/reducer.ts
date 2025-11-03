@@ -1,5 +1,5 @@
 // import storage from 'redux-persist/lib/storage';
-import { userApi } from "./api/user";
+import { userApi } from "./api/endpoints/user";
 import cartReducer from "./features/cart-slice";
 
 // const persistConfig = {

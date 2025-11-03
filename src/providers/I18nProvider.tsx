@@ -1,3 +1,4 @@
+import { log } from "console";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 
@@ -11,6 +12,7 @@ export const I18nProvider = async ({ children, locale }: I18nProviderProps) => {
   try {
     messages = (await import(`../messages/${locale}.json`)).default;
   } catch (error) {
+    log(error);
     notFound();
   }
 

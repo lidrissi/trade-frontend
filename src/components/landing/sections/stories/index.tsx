@@ -1,4 +1,3 @@
-import { ArrowRight, Image } from "lucide-react";
 import Story from "./story";
 import Explore from "./Explore";
 
@@ -16,12 +15,14 @@ export default function Stories() {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ",
       image: "story2.png",
+      verified: false,
     },
     {
       name: "Intercable",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ",
       image: "story3.png",
+      verified: false,
     },
   ];
 

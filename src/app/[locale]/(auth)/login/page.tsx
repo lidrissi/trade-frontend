@@ -6,7 +6,6 @@ import Link from "next/link";
 import { Facebook, Linkedin, Twitter } from "lucide-react";
 import { ROUTES } from "@/lib/routes";
 import { signIn } from "next-auth/react";
-import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema, LoginFormData } from "@/lib/validations/auth/login";
@@ -30,13 +29,10 @@ const loginSocials = [
 ];
 
 const PageLogin = () => {
-  const t = useTranslations("Auth");
-
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
-    setError,
+    formState: { errors },
   } = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -45,8 +41,7 @@ const PageLogin = () => {
     },
   });
 
-  const onSubmit = async (data: LoginFormData): Promise<void> => {
-    // setError("");
+  const onSubmit = async (): Promise<void> => {
     const res = await signIn("credentials", {
       email: "superadmin@massarates.ma",
       password: "Fdgx9!kQ",
@@ -54,7 +49,7 @@ const PageLogin = () => {
     });
 
     if (res?.error) {
-      // setError("Invalid credentials");
+      console.log(res.error);
     } else {
       window.location.href = "/"; // redirect manually
     }

@@ -2,11 +2,7 @@ import { getNavigation } from "@/data/navigation";
 import SidebarNavigation from "./SidebarNavigation";
 import { Aside } from "@/components/aside/aside";
 
-interface Props {
-  className?: string;
-}
-
-const AsideSidebarNavigation = async ({ className }: Props) => {
+const AsideSidebarNavigation = async () => {
   const navigationMenu = await getNavigation();
 
   return (

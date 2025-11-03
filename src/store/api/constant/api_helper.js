@@ -1,4 +1,5 @@
 import axios from "axios";
+import { fetchBaseQuery } from "@reduxjs/toolkit/query";
 
 export const API_URL = `/api/v1`;
 export const axiosApi = axios.create({
@@ -51,3 +52,15 @@ export async function patch(url, data, config = {}) {
 export async function del(url, data = {}) {
   return await axiosApi.delete(url, { data }).then((response) => response.data);
 }
+
+export const customFetchBaseQuery = () => {
+  return fetchBaseQuery({
+    baseUrl: `${process.env.NEXT_PUBLIC_API_URL}/api/v1`,
+    prepareHeaders: (headers, {}) => {
+      const token = "";
+      headers.set("Authorization", `Bearer ${token}`);
+      headers.set("Accept", "application/json");
+      return headers;
+    },
+  });
+};

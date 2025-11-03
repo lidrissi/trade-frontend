@@ -8,6 +8,7 @@ import Step3Icon from "./step3";
 import Step4Icon from "./step4";
 import Step1Icon from "./step1";
 import clsx from "clsx";
+import Image from "next/image";
 
 interface Step {
   id: number;
@@ -66,10 +67,12 @@ function Steps() {
           <div className="relative flex w-full justify-around">
             {steps.map((step, index) => (
               <div key={step.id} className="flex flex-col items-center">
-                <img
+                <Image
                   src={`/images/home/how-it-works/step${index + 1}-${currentStep >= index ? "light" : "dark"}.svg`}
                   alt={"step-icon"}
                   className={"h-22"}
+                  width={88}
+                  height={88}
                 />
               </div>
             ))}
@@ -127,11 +130,13 @@ function Steps() {
         <div className="flex flex-row justify-between gap-4">
           <div className="flex flex-col justify-around">
             {steps.map((step, index) => (
-              <img
+              <Image
                 key={step.id}
                 className="h-12 w-12"
                 src={`/images/home/how-it-works/step${index + 1}-${currentStep >= index ? "light" : "dark"}.svg`}
                 alt={"step-icon"}
+                height={48}
+                width={48}
               />
             ))}
           </div>

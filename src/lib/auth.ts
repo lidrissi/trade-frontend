@@ -68,9 +68,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       if (user) {
         return {
           ...token,
-          //@ts-ignore
+          //@ts-expect-error fix later
           accessToken: user?.accessToken,
-          //@ts-ignore
+          //@ts-expect-error fix later
           refreshToken: user?.refreshToken,
         };
       }
@@ -78,9 +78,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     },
     async session({ session, token }) {
       // Send properties to the client
-      //@ts-ignore
+      //@ts-expect-error fix later
       session.accessToken = token.accessToken as string;
-      //@ts-ignore
       session.user.id = token.sub as string;
       return session;
     },
