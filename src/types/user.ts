@@ -1,0 +1,22 @@
+export type User = {
+  id: string;
+  userId: string;
+  email: string;
+  name: string;
+  role: string;
+  phone?: string;
+  bio?: string;
+  address?: string;
+  city?: string;
+  country?: string;
+  avatarUrl?: string;
+  isPublic: boolean;
+  isVerified: boolean;
+  verificationStatus: string;
+  verificationId?: string;
+  verificationReason?: string;
+  verifiedAt?: Date;
+  isActive: boolean;
+  lastLoginAt?: Date;
+  permissions: string[];
+};

@@ -1,7 +1,19 @@
 import { Button } from "@/components/ui/button";
-import { BadgeCheck, Check } from "lucide-react";
+import { BadgeCheck } from "lucide-react";
 
-export default function Story({ description, image, name, verified }: any) {
+type StoryType = {
+  description: string;
+  image: string;
+  name: string;
+  verified: boolean;
+};
+
+export default function Story({
+  description,
+  image,
+  name,
+  verified,
+}: StoryType) {
   return (
     <div className="hover:bg-brand-light font-outfit relative w-full rounded-3xl bg-white p-4 shadow-xl hover:text-white">
       <div className="flex items-center gap-8">

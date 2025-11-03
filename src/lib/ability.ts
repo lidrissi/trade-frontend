@@ -1,6 +1,5 @@
-// lib/ability.ts
+import { User } from "@/types/user";
 import { Ability, AbilityBuilder, AbilityClass } from "@casl/ability";
-import { Session } from "next-auth";
 
 export type Actions = "manage" | "create" | "read" | "update" | "delete";
 export type Subjects = "Post" | "User" | "Comment" | "all";
@@ -8,8 +7,8 @@ export type Subjects = "Post" | "User" | "Comment" | "all";
 export type AppAbility = Ability<[Actions, Subjects]>;
 export const AppAbility = Ability as AbilityClass<AppAbility>;
 
-export function defineAbilityFor(user: any): AppAbility {
-  const { can, cannot, build } = new AbilityBuilder(AppAbility);
+export function defineAbilityFor(user: User): AppAbility {
+  const { can, build } = new AbilityBuilder(AppAbility);
 
   // Guest permissions
   if (!user) {
@@ -22,7 +21,7 @@ export function defineAbilityFor(user: any): AppAbility {
   can("read", "Post");
   can("read", "Comment");
   can("create", "Comment");
-  can("update", "Comment", { userId: user.id });
+  // can("update", "Comment", { userId: user.id });
 
   // Role-based permissions
   switch (user.role) {
@@ -38,14 +37,14 @@ export function defineAbilityFor(user: any): AppAbility {
 
     case "author":
       can("create", "Post");
-      can("update", "Post", { userId: user.id });
-      can("delete", "Post", { userId: user.id });
+      // can("update", "Post", { userId: user.id });
+      // can("delete", "Post", { userId: user.id });
       break;
 
     case "user":
       can("create", "Post");
-      can("update", "Post", { userId: user.id });
-      can("read", "User", { id: user.id });
+      // can("update", "Post", { userId: user.id });
+      // can("read", "User", { id: user.id });
       break;
   }
 

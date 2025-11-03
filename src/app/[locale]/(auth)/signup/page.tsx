@@ -3,7 +3,6 @@ import { Field, FieldGroup, FieldSet, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Metadata } from "next";
 import Form from "next/form";
-import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Linkedin, Twitter } from "lucide-react";
 
