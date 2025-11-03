@@ -19,17 +19,17 @@ export default async function LandingFooter() {
                 euismod nunc non.
               </p>
               <div className="flex gap-3">
-                <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white transition-colors hover:bg-[#f0f0f0]">
-                  <Twitter className="h-4 w-4 text-black" />
+                <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black transition-colors hover:bg-[#081228] hover:text-white">
+                  <Twitter className="h-4 w-4" />
                 </button>
-                <button className="flex h-10 w-10 items-center justify-center rounded-full bg-black transition-colors hover:bg-[#262b2f]">
-                  <Facebook className="h-4 w-4 text-white" />
+                <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black transition-colors hover:bg-[#081228] hover:text-white">
+                  <Facebook className="h-4 w-4" />
                 </button>
-                <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white transition-colors hover:bg-[#f0f0f0]">
-                  <Instagram className="h-4 w-4 text-black" />
+                <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black transition-colors hover:bg-[#081228] hover:text-white">
+                  <Instagram className="h-4 w-4" />
                 </button>
-                <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white transition-colors hover:bg-[#f0f0f0]">
-                  <Github className="h-4 w-4 text-black" />
+                <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black transition-colors hover:bg-[#081228] hover:text-white">
+                  <Github className="h-4 w-4" />
                 </button>
               </div>
             </div>

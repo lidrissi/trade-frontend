@@ -20,39 +20,39 @@ export const userApi = createApi({
         });
 
         return {
-          url: `${urls.user.list}?${searchParams.toString()}`,
+          url: `${urls.user.list.url}?${searchParams.toString()}`,
         };
       },
       providesTags: () => [tag.users],
     }),
     addUser: builder.mutation({
       query: (newUser) => ({
-        url: urls.user.create,
-        method: "POST",
+        url: urls.user.create.url,
+        method: urls.user.create.method,
         body: newUser,
       }),
       invalidatesTags: [tag.users],
     }),
     updateUser: builder.mutation({
       query: (updatedUser) => ({
-        url: urls.user.update,
-        method: "PATCH",
+        url: urls.user.update.url,
+        method: urls.user.update.method,
         body: updatedUser,
       }),
       invalidatesTags: [tag.users],
     }),
     deleteUser: builder.mutation({
       query: (body) => ({
-        url: urls.user.delete,
-        method: "DELETE",
+        url: urls.user.deleteUser.url,
+        method: urls.user.deleteUser.method,
         body,
       }),
       invalidatesTags: [tag.users],
     }),
     changeUserPassword: builder.mutation({
       query: (body) => ({
-        url: urls.user.changePassword,
-        method: "PATCH",
+        url: urls.user.updatePassword.url,
+        method: urls.user.updatePassword.method,
         body,
       }),
       invalidatesTags: [tag.users],

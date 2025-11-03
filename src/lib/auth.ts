@@ -1,3 +1,4 @@
+import { urls } from "@/store/api/constant/url_helper";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
@@ -14,9 +15,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           if (!credentials?.email || !credentials?.password) {
             return null;
           }
-
           const res = await fetch(
-            `${process.env.EXTERNAL_API_BASE_URL}${process.env.EXTERNAL_API_AUTH_ENDPOINT}`,
+            `${process.env.NEXT_PUBLIC_API_URL}/api/v1${urls.auth.login.url}`,
             {
               method: "POST",
               headers: {
