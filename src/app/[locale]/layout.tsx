@@ -3,6 +3,7 @@ import "./globals.css";
 import { AppProviders } from "@/providers";
 import { use } from "react";
 import { Inter, Outfit, Quicksand, Work_Sans, Poppins } from "next/font/google";
+import { Toaster } from "sonner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -62,7 +63,10 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${outfit.variable} ${workSans.variable} ${quicksand.variable} ${poppins.variable}`}
       >
-        <AppProviders locale={locale}>{children}</AppProviders>
+        <AppProviders locale={locale}>
+          {children}
+          <Toaster />
+        </AppProviders>
       </body>
     </html>
   );

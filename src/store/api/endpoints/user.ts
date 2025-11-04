@@ -7,11 +7,12 @@ import {
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { urls } from "../constant/url_helper";
 import { customFetchBaseQuery } from "../constant/api_helper";
+import { TAG } from "../constant/tag";
 
 export const userApi = createApi({
   reducerPath: "userApi",
   baseQuery: customFetchBaseQuery(),
-  tagTypes: ["User"],
+  tagTypes: [TAG.User],
   endpoints: (builder) => ({
     getUsers: builder.query<
       UsersResponse,
@@ -19,11 +20,11 @@ export const userApi = createApi({
     >({
       query: ({ page = 1, limit = 10, search = "" }) =>
         `users?page=${page}&limit=${limit}&search=${search}`,
-      providesTags: () => [{ type: "User", id: "LIST" }],
+      providesTags: () => [{ type: TAG.User, id: "LIST" }],
     }),
     getUser: builder.query<UserResponse, string>({
       query: (id) => urls.user.find(id),
-      providesTags: (result, error, id) => [{ type: "User", id }],
+      providesTags: (result, error, id) => [{ type: TAG.User, id }],
     }),
 
     createUser: builder.mutation<UserResponse, CreateUserRequest>({
@@ -31,14 +32,14 @@ export const userApi = createApi({
         ...urls.user.create,
         body: userData,
       }),
-      invalidatesTags: [{ type: "User", id: "LIST" }],
+      invalidatesTags: [{ type: TAG.User, id: "LIST" }],
     }),
     updateUser: builder.mutation<UserResponse, UpdateUserRequest>({
       query: ({ id, ...updateData }: UpdateUserRequest) => ({
         ...urls.user.update(id),
         body: updateData,
       }),
-      invalidatesTags: (result, error, { id }) => [{ type: "User", id }],
+      invalidatesTags: (result, error, { id }) => [{ type: TAG.User, id }],
     }),
 
     deleteUser: builder.mutation<{ success: boolean; message: string }, string>(
@@ -48,8 +49,8 @@ export const userApi = createApi({
           method: "DELETE",
         }),
         invalidatesTags: (result, error, id) => [
-          { type: "User", id },
-          { type: "User", id: "LIST" },
+          { type: TAG.User, id },
+          { type: TAG.User, id: "LIST" },
         ],
       },
     ),

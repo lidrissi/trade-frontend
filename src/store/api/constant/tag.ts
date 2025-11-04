@@ -1,3 +1,4 @@
-export const tag = {
-  users: "Users",
-};
+export const TAG = {
+  User: "User",
+  Product: "Product",
+} as const;

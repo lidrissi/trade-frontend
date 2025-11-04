@@ -1,6 +1,7 @@
 // import storage from 'redux-persist/lib/storage';
 import { userApi } from "./api/endpoints/user";
-import cartReducer from "./features/cart-slice";
+import cart from "./slices/cart";
+import auth from "./slices/auth";
 
 // const persistConfig = {
 //   key: 'root',
@@ -9,7 +10,8 @@ import cartReducer from "./features/cart-slice";
 // const persistedProfileReducer = persistReducer(persistConfig, profileReducer);
 
 const rootReducer = {
-  cartReducer,
+  cart,
+  auth,
   [userApi.reducerPath]: userApi.reducer,
 };
 export default rootReducer;
