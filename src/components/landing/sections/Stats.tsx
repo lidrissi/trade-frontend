@@ -26,7 +26,6 @@ export default function Stats() {
         {stats.map((stat, index) => (
           <div key={index} className="flex items-center">
             <Image
-              className="h-auto w-auto"
               alt=""
               width={110}
               height={110}

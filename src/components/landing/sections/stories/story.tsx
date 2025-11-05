@@ -29,7 +29,7 @@ export default function Story({
             {description}
           </p>
           <Button
-            variant="link"
+            variant="ghost"
             className="p-0 font-semibold text-black underline"
           >
             Visit retail shop

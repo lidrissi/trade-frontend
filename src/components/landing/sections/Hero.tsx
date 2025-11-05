@@ -35,7 +35,7 @@ export default function Hero() {
                 className="font-inter bg-cyan hover:bg-cyan/90 w-40 rounded-full"
               >
                 <Search className="h-4 w-4" />
-                Search
+                <span className="ms-2">Search </span>
               </Button>
             </div>
           </div>
@@ -53,7 +53,8 @@ export default function Hero() {
             </div>
             <div className="flex">
               <Button
-                variant="outline"
+                color="white"
+                variant="default"
                 className="font-inter gap-1.5 rounded-full px-4 text-base has-[>svg]:px-4 sm:h-11 sm:px-8 sm:has-[>svg]:px-8"
               >
                 Join as Supplier

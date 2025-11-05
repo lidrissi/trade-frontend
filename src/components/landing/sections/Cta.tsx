@@ -30,7 +30,7 @@ export default function Cta() {
               </p>
               <div className="flex flex-row items-center gap-4">
                 <Button
-                  variant={"outline"}
+                  color="white"
                   className="rounded-full text-sm font-medium"
                 >
                   Explore Products

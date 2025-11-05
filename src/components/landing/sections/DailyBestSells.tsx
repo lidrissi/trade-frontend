@@ -120,7 +120,10 @@ export default function DailyBestSells() {
                     Request Quote
                     <ArrowUpRight className="ml-2 h-4 w-4" />
                   </Button>
-                  <Button variant="link" className="font-underline text-xs">
+                  <Button
+                    variant="ghost"
+                    className="font-underline rounded-full text-xs"
+                  >
                     Details
                   </Button>
                 </div>
@@ -193,7 +196,10 @@ export default function DailyBestSells() {
                     Request Quote
                     <ArrowUpRight className="ml-2 h-4 w-4" />
                   </Button>
-                  <Button variant="link" className="font-underline text-xs">
+                  <Button
+                    variant="ghost"
+                    className="font-underline rounded-full text-xs"
+                  >
                     Details
                   </Button>
                 </div>

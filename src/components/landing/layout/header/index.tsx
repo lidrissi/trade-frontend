@@ -5,7 +5,9 @@ import { Disclosure } from "@headlessui/react";
 import AsideSidebarNavigation from "./aside-sidebar-navigation";
 import HamburgerBtnMenu from "./HamburgerBtnMenu";
 import { Navigation } from "../Navigation";
-import Logo from "@/components/Logo";
+import Logo from "@/components/landing/layout/header/Logo";
+import { Link } from "@/i18n/routing";
+import { ROUTES } from "@/lib/routes";
 
 export default function Header() {
   return (
@@ -31,15 +33,18 @@ export default function Header() {
                 <ShoppingCart className="h-5 w-5" />
               </button>
 
-              <button className="font-poppins flex items-center gap-2 text-sm font-normal transition-opacity hover:opacity-70">
-                <UserRound className="h-5 w-5" />
-                <span>Sign in</span>
-              </button>
-
-              <Button className="font-work-sans font-base bg-cyan hover:bg-cyan/90 hidden gap-1.5 rounded-full px-3 has-[>svg]:px-2.5 sm:h-11 sm:px-6 sm:has-[>svg]:px-8 md:flex">
-                Create account
-                <ArrowUpRight className="h-4 w-4" />
-              </Button>
+              <Link href={ROUTES.AUTH.LOGIN}>
+                <button className="font-poppins flex cursor-pointer items-center gap-2 text-sm font-normal transition-opacity hover:opacity-70">
+                  <UserRound className="h-5 w-5" />
+                  <span>Sign in</span>
+                </button>
+              </Link>
+              <Link href={ROUTES.AUTH.REGISTER}>
+                <Button className="font-work-sans font-base bg-cyan hover:bg-cyan/90 hidden gap-1.5 rounded-full px-3 has-[>svg]:px-2.5 sm:h-11 sm:px-6 sm:has-[>svg]:px-8 md:flex">
+                  Create account
+                  <ArrowUpRight className="h-4 w-4" />
+                </Button>
+              </Link>
             </div>
             <div className="flex items-center gap-1 md:hidden">
               <SearchBar />

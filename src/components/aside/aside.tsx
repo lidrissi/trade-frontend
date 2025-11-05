@@ -9,7 +9,7 @@ import {
 import clsx from "clsx";
 import { X } from "lucide-react";
 import { createContext, useContext, useState, type ReactNode } from "react";
-import Logo from "../Logo";
+import Logo from "../landing/layout/header/Logo";
 
 /**
  * Drawer component that opens on user click.

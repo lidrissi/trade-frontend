@@ -4,10 +4,10 @@ export const ROUTES = {
   FAQ: "/faq",
   STORE: "/store",
   AUTH: {
-    LOGIN: "/login",
-    SIGNUP: "/signup",
-    FORGOT_PASSWORD: "/forgot-password",
-    CHANGE_PASSWORD: "/change-password",
+    LOGIN: "/auth/login",
+    REGISTER: "/auth/register",
+    FORGOT_PASSWORD: "/auth/forgot-password",
+    CHANGE_PASSWORD: "/auth/change-password",
   },
   USER: {
     LIST: "/users",

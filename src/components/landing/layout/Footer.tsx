@@ -1,4 +1,4 @@
-import Logo from "@/components/Logo";
+import Logo from "@/components/landing/layout/header/Logo";
 import { getNavigation } from "@/data/navigation";
 import { Twitter, Facebook, Instagram, Github } from "lucide-react";
 import Link from "next/link";
